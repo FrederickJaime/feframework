@@ -1,6 +1,7 @@
 
 const { series, parallel, src, dest } = require('gulp');
-
+//const requireDir = require('require-dir');
+//const dir = requireDir('./.phoenix/tasks');
 
 
 function build(cb) {
@@ -8,12 +9,10 @@ function build(cb) {
   console.log('buil task')
 }
 
-function clean(cb) {
-  cb();
-  console.log('clean task')
-}
 
 
 
 exports.build = build;
 exports.default = series(clean, build);
+
+

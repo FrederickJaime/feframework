@@ -1,0 +1,19 @@
+
+
+/**
+ * Phoenix reset
+ * =================================
+ * We use normalize.css for the bulk of our 'reset'
+ */
+ 
+@import 'normalize';
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
