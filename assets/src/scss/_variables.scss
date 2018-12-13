@@ -1,0 +1,25 @@
+
+
+
+/**
+ * Breakpoints
+ * =================================
+ * There are no common breakpoints so these are just a suggestions
+ * You'll need to define your own breakpoints to suit your design
+ * Add your breakpoints to this Sass map
+ * Used in the Kickoff grid
+ */
+ $breakpoints: (
+  xsmall  : 320px, 
+	small   : 460px,
+	medium  : 890px,
+	large   : 1200px,
+	xlarge  : 1440px
+);
+
+// Setup layout max-width
+$layout-margin                : 0; // [in pixels] Space outside the grid
+$layout-max-width             : 1000; // [in pixels]
+$layout-min-width             : 960;  // [in pixels] Minimum width for layout in <IE9
+$layout-max-width--huge       : 1100; // [in pixels]
+$layout-min-width--huge       : 1100; // [in pixels] Minimum width for layout in <IE9

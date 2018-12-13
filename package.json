@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "A lightweight front-end framework for creating scalable, responsive websites",
   "main": "index.js",
+  "homepage": "n/a",
+  "repository": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

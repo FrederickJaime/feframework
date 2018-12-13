@@ -1,0 +1,49 @@
+/**
+ * Global color palette
+ * =================================
+ * - Generic colors
+ * - Color scheme
+ * - Common colors
+ * - Links
+ * - Text selection
+ * - <hr>
+ * - Any others..
+ */
+
+// Generic colors
+$blue                         : rgb(0,0,235);
+$blue_light                   : rgb(0,110,215);
+$green                        : rgb(50,160,45);
+$red                          : rgb(235,70,85);
+$gray                         : rgb(115,110,125);
+$black                        : rgb(0,0,0);
+$white                        : rgb(255,255,255);
+$off_white                    : rgb(235,240,250);
+
+
+
+// Color Scheme
+$color-primary                : $blue;
+$color-secondary              : $orange;
+$color-highlight              : $blue;
+
+// Common colors
+$color-text                   : $black;
+$color-bg                     : #f1f1f1;
+$color-border                 : #ddd;
+
+
+// Links
+$color-link-default           : $color-highlight;
+$color-link-visited           : $color-link-default;
+$color-link-hover             : darken($color-link-default, 20%);
+$color-link-active            : darken($color-link-default, 20%);
+
+// Text Selection
+$color-selection              : #fff;
+$color-selection-bg           : $color-primary;
+
+
+// <hr> border color
+$hr-color                     : lighten(#000, 70%);
+

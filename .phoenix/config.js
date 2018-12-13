@@ -1,6 +1,6 @@
 /**
  * Global build task vars
- * Both Webpack and Gulp use these vars. Change as much as you like :)
+ *
  */
 const gutil = require('gulp-util');
 const pkg = require('../package');
@@ -11,7 +11,9 @@ const ConfigOptions = function () {
 	config.isRelease = (gutil.env.release ? true : false);
 
 	config.srcDir = './assets/src'; // config.srcDir
-	config.distDir = './assets/dist'; // config.distDir
+  config.distDir = './assets/dist'; // config.distDir
+  
+  
 
 	// CSS-related vars
 	config.css = {
@@ -70,13 +72,11 @@ const ConfigOptions = function () {
 	// Banners and info
 	config.misc = {
 		banner: `/**
- 
-
- * ${pkg.title} v${pkg.version}
- * ${pkg.homepage}
- * ${pkg.repo}
- */
-`,
+    * ${pkg.name} v${pkg.version}
+    * ${pkg.homepage}
+    * ${pkg.repository}
+    */
+    `,
 
 		// Output file-size and gzip file-size. May slow-down build.
 		showFileSize: true,
