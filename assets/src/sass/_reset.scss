@@ -5,8 +5,8 @@
  * =================================
  * We use normalize.css for the bulk of our 'reset'
  */
- 
-@import 'normalize';
+
+@import '../../../node_modules/normalize-scss/sass/normalize';
 
 html {
 	box-sizing: border-box;
@@ -17,3 +17,6 @@ html {
 *::after {
 	box-sizing: inherit;
 }
+
+
+@include normalize();
