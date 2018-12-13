@@ -29,6 +29,11 @@
 
 
 
+/*
+ * Mixins, helpers and functions
+ */
+ @import "mixins";
+
  
  /**
   * Core variables
@@ -53,43 +58,46 @@
  
  /**
   * Components
-  * See https://trykickoff.com/demos/components.html for more info
+  * See https:// for more info
   *
   * Note: place all 3rd party components at the top of the list
   */
- //@import "kickoff-fluidVideo"; // https://github.com/mrmartineau/kickoff-fluidVideo.css
- //@import "kickoff-grid"; // https://github.com/TryKickoff/kickoff-grid.css - docs: trykickoff.com/docs/grid.html & demo: trykickoff.com/demos/grids.html
- //@import "components/forms/forms"; // https://trykickoff.com/demos/forms.html
- //@import "components/links";
- //@import "components/buttons";
- //@import "components/lists";
- //@import "components/embedded-content"; // images etc
- //@import "components/icons";
- //@import "components/skip-navigation";
- //@import "components/code";
- //@import "components/tables";
- // @import "components/scrollbars";
- // yo:start -- component
- // yo:end -- component
+
+  /*
+  @import "components/links";
+  @import "components/buttons";
+  @import "components/lists";
+  @import "components/embedded-content"; // images etc
+  @import "components/icons";
+  @import "components/skip-navigation";
+  @import "components/code";
+  @import "components/tables";
+  @import "components/scrollbars";
+  yo:start -- component
+  yo:end -- component
+ */
  
  
  /**
   * Partials
   */
- //@import "partials/masthead"; // Example partial for masthead
- //@import "partials/footer"; // Example partial for footer
- //@import "partials/browser-upgrade"; // Styles to show an upgrade message to users on old browsers
- // yo:start -- partial
- // yo:end -- partial
- 
+  /*
+  @import "partials/masthead"; // Example partial for masthead
+  @import "partials/footer"; // Example partial for footer
+  @import "partials/browser-upgrade"; // Styles to show an upgrade message to users on old browsers
+  yo:start -- partial
+  yo:end -- partial
+*/ 
  
  /**
   * Views
   */
- //@import "views/home";
- //@import "views/contact";
- // yo:start -- view
- // yo:end -- view
+  /*
+  @import "views/home";
+  @import "views/contact";
+  yo:start -- view
+  yo:end -- view
+ */
  
  
  /**
@@ -106,4 +114,6 @@
  /**
   * Print styles
   */
- //@import "views/print";
+  /*
+  @import "views/print";
+ */
