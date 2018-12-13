@@ -24,7 +24,7 @@ const ConfigOptions = function () {
 
 		// We are supporting the last 2 browsers, any browsers with >5% market share,
 		// and ensuring we support IE9+ with prefixes
-		browsers: ['> 5%', 'last 2 versions', 'ie > 8'], // config.css.browsers
+		browsers: ['> 5%', 'last 2 versions', 'ie > 10'], // config.css.browsers
 	};
 
 	// Javascript-related vars

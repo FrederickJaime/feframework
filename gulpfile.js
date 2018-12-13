@@ -2,11 +2,11 @@
 const { series, parallel, src, dest, watch } = require('gulp');
 //const requireDir = require('require-dir');
 //const dir = requireDir('./.phoenix/tasks');
-
+const config = require('./.phoenix/config');
 
 function build(cb) {
   cb();
-  console.log('buil task')
+  console.log(config.srcDir );
 }
 
 
