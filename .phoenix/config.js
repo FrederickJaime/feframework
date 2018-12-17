@@ -18,7 +18,8 @@ const ConfigOptions = function () {
 	// CSS-related vars
 	config.css = {
 		scssDir: `${config.srcDir}/scss`, // config.css.scssDir
-		distDir: `${config.distDir}/css`, // config.css.distDir
+		distDirMin: `${config.distDir}/css/minified`,
+		distDir: `${config.distDir}/css/unminified`, // config.css.distDir
 
 		// Renaming this changes the name of the generated CSS file
 		// Make sure you update your template file

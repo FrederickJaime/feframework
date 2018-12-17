@@ -15,9 +15,12 @@
     "cssnano": "^4.1.7",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-util": "^3.0.8",
+    "postcss-discard-comments": "^4.0.1",
+    "postcss-discard-unused": "^4.0.1",
     "requiredir": "^1.0.7"
   },
   "dependencies": {
