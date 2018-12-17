@@ -21,10 +21,8 @@ function build(cb) {
 }
 
 let sassCompile = function() {
-
   let plugins = [
     autoprefixer({ browsers: ['last 2 version'] }),
-    //cssnano(),
     discardcomments()
   ];
 
@@ -57,7 +55,10 @@ let sassMinCompile = function() {
 exports.build = build;
 exports.default = series(
   build,
-  parallel(sassCompile,sassMinCompile),
+  parallel(
+    sassCompile,
+    sassMinCompile
+  ),
   
 );
 
