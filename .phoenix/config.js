@@ -11,9 +11,17 @@ const ConfigOptions = function () {
 	config.isRelease = (gutil.env.release ? true : false);
 
 	config.srcDir = './assets/src'; // config.srcDir
-  config.distDir = './assets/dist'; // config.distDir
+	config.distDir = './assets/dist'; // config.distDir
+	config.localDir = './app'; //files for localserver
   
-  
+	
+	
+	// Local-related vars
+	config.local = {
+		css: `${config.localDir}/css`,
+		js: `${config.localDir}/js`,
+		img: `${config.localDir}/images`
+	}
 
 	// CSS-related vars
 	config.css = {
@@ -23,7 +31,7 @@ const ConfigOptions = function () {
 
 		// Renaming this changes the name of the generated CSS file
 		// Make sure you update your template file
-		distFile: 'kickoff', // config.css.distFile
+		distFile: 'sxm.phoenix', // config.css.distFile
 
 		// We are supporting the last 2 browsers, any browsers with >5% market share,
 		// and ensuring we support IE9+ with prefixes

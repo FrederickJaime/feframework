@@ -8,6 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
 const config = require('./.phoenix/config');
 const cssnano = require('cssnano');
+const server = require('gulp-server-livereload');
 
 
 
@@ -51,6 +52,16 @@ let sassMinCompile = function() {
   .pipe(dest(config.css.distDirMin));
 }
 
+let localServer = function() {
+
+  return src('app')
+  .pipe(server({
+    livereload: true,
+    directoryListing: true,
+    open: true
+  }));
+   
+}
 
 exports.build = build;
 exports.default = series(
@@ -60,6 +71,9 @@ exports.default = series(
     sassMinCompile
   ),
   
+);
+exports.server = series(
+
 );
 
 
