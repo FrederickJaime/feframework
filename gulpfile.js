@@ -55,7 +55,7 @@ let sassMinCompile = function() {
 
 
 /*
-* LOCAL TASK FOR GENERATING STATIC PAGES
+* LOCAL TASK FOR GENERATING STATIC PAGES 
 */
 let views = function() {
 
@@ -70,7 +70,7 @@ let localSass = function() {
     discardcomments()
   ];
 
-  return src([`${config.local.devcss}`])
+  return src([`${config.local.devcss}/*.scss`])
 
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
@@ -79,6 +79,12 @@ let localSass = function() {
     .pipe(dest(config.local.appcss));
 }
 
+let localJs = function() {
+
+  return src([`${config.local.devjs}/*.js`])
+  .pipe(dest(config.local.appjs));
+
+}
 
 
 let localServe = function() {
@@ -101,6 +107,7 @@ exports.devbuild = series(
     views
   ),
   localSass,
+  localJs,
   localServe
 
 );
