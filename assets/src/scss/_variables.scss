@@ -64,6 +64,17 @@ $layout-min-width--huge       : 1100px; // [in pixels] Minimum width for layout 
  * There are no common breakpoints so these are just a suggestions
  */
 // Map variable
+$rowconfig: (
+	'small' : (
+		'padding': '4%'
+	),
+	'medium' : (
+		'padding': '4%'
+	),
+	'medium' : (
+		'padding': '24px'
+	),
+);
 $columns: (
 	1 : "08.333333333%",
 	2 : "16.66666667%",
