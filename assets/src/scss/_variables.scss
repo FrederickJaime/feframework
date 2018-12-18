@@ -50,8 +50,31 @@ $header-styles: (
 );
 
 // Setup layout max-width
-$layout-margin                : 0; // [in pixels] Space outside the grid
-$layout-max-width             : 1000; // [in pixels]
-$layout-min-width             : 960;  // [in pixels] Minimum width for layout in <IE9
-$layout-max-width--huge       : 1100; // [in pixels]
-$layout-min-width--huge       : 1100; // [in pixels] Minimum width for layout in <IE9
+$layout-margin                : 0px; // [in pixels] Space outside the grid
+$layout-max-width             : 1000px; // [in pixels]
+$layout-min-width             : 960px;  // [in pixels] Minimum width for layout in <IE9
+$layout-max-width--huge       : 1100px; // [in pixels]
+$layout-min-width--huge       : 1100px; // [in pixels] Minimum width for layout in <IE9
+
+
+
+/**
+ * Columns config
+ * =================================
+ * There are no common breakpoints so these are just a suggestions
+ */
+// Map variable
+$columns: (
+	1 : "08.333333333%",
+	2 : "16.66666667%",
+	3 : "25%",
+	4 : "33.33333333%",
+	5 : "41.66666667%",
+	6 : "50%",
+  7 : "58.33333333%",
+  8 : "66.66666667%",
+  9 : "75%",
+	10 : "83.033333333%",
+	11 : "91.66666667%",
+	12 : "100%"
+);

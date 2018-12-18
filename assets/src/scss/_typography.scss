@@ -59,3 +59,20 @@ h6,
     @include fontSize(map-deep-get($header-styles, medium, h6, font-size));
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: $header-lineheight;
+  margin-bottom: $header-margin-bottom;
+  margin-top: $header-margin-top;
+}

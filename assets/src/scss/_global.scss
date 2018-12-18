@@ -12,6 +12,30 @@
  */
 .l-container {
 	width: 90%;
-	max-width: #{$layout-max-width}px;
+	max-width: #{$layout-max-width};
 	margin: 0 auto;
+}
+
+
+
+// How to use it
+.column {
+	display: block;
+	position: relative;
+	
+	&-small {
+		@include icons-list($columns);
+	}
+
+	&-medium {
+		@include bp(medium) {
+			@include icons-list($columns);
+		}
+	}
+	
+	&-large {
+		@include bp(large) {
+			@include icons-list($columns);
+		}
+	}
 }
