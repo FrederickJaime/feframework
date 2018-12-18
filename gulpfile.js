@@ -49,7 +49,7 @@ let sassMinCompile = function() {
   .pipe(postcss(plugins))
   .pipe(rename('sxm.phoenix.min.css'))
   .pipe(sourcemaps.write('.'))
-  .pipe(dest(config.local.css))
+  .pipe(dest(config.local.appcss))
   .pipe(dest(config.css.distDirMin));
 }
 
@@ -59,7 +59,7 @@ let sassMinCompile = function() {
 */
 let views = function() {
 
-  return src([`${config.local.views}/*.html`])
+  return src([`${config.local.devviews}/*.html`])
   .pipe(dest(config.localDir));
 
 }
@@ -70,7 +70,7 @@ let localSass = function() {
     discardcomments()
   ];
 
-  return src([`${config.local.devcss}/*.scss`])
+  return src([`${config.local.devcss}`])
 
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
