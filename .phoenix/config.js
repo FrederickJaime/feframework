@@ -13,6 +13,7 @@ const ConfigOptions = function () {
 	config.srcDir = './assets/src'; // config.srcDir
 	config.distDir = './assets/dist'; // config.distDir
 	config.localDir = './app'; //files for localserver
+	config.viewsDir = './views'
   
 	
 	

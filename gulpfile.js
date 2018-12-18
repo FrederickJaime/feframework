@@ -49,20 +49,39 @@ let sassMinCompile = function() {
   .pipe(postcss(plugins))
   .pipe(rename('sxm.phoenix.min.css'))
   .pipe(sourcemaps.write('.'))
+  .pipe(dest(config.local.css))
   .pipe(dest(config.css.distDirMin));
 }
 
-let localServer = function() {
+let views = function() {
+
+  return src([`${config.viewsDir}/*.html`])
+  .pipe(dest(config.localDir));
+
+}
+
+let local = function() {
 
   return src('app')
   .pipe(server({
-    livereload: true,
-    directoryListing: true,
-    open: true
+    host: '127.0.0.1',
+    livereload:       true,
+    open:             true,
+    log:              'debug',
+    clientConsole:    true,
+    port: 8081
   }));
    
 }
+exports.devbuild = series(
+  parallel(
+    sassCompile,
+    sassMinCompile,
+    views
+  ),
+  local
 
+);
 exports.build = build;
 exports.default = series(
   build,
@@ -72,8 +91,6 @@ exports.default = series(
   ),
   
 );
-exports.server = series(
 
-);
 
 

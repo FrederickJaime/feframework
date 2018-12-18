@@ -6,7 +6,7 @@ assets/dist/**/*
 # Dependencies
 # - Node modules directory. comment this line to commit them.
 node_modules/*
-
+app/css/*
 
 
 # OS or Editor folders

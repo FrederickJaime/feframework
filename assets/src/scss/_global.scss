@@ -54,17 +54,17 @@
 		display: block;
 		position: relative;
 
-		.small {
+		&.small {
 			@include icons-list($columns);
 		}
 	
-		.medium {
+		&.medium {
 			@include bp(medium) {
 				@include icons-list($columns);
 			}
 		}
 		
-		.large {
+		&.large {
 			@include bp(large) {
 				@include icons-list($columns);
 			}
