@@ -13,15 +13,21 @@ const ConfigOptions = function () {
 	config.srcDir = './assets/src'; // config.srcDir
 	config.distDir = './assets/dist'; // config.distDir
 	config.localDir = './app'; //files for localserver
-	config.viewsDir = './views'
+
+	config.localDev = './local.dev';
   
 	
 	
 	// Local-related vars
 	config.local = {
-		css: `${config.localDir}/css`,
-		js: `${config.localDir}/js`,
-		img: `${config.localDir}/images`
+		appcss: `${config.localDir}/css`,    // app css
+		appjs: `${config.localDir}/js`,      // app js
+		appimg: `${config.localDir}/images`, // app images
+
+		devcss: `${config.localDev}/scss`,   // dev scss
+		devjs: `${config.localDev}/js`,			 // dev js
+		devimg: `${config.localDev}/images`, // dev images
+		devviews: `${config.localDev}/views` // dev views
 	}
 
 	// CSS-related vars

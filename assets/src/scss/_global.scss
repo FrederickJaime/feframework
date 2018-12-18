@@ -28,11 +28,19 @@
  * .column-medium-6
  * .column-large-8
  */
+.section {
+	display: block;
+	position: relative;
+	width: 100%;
+}
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
+	margin: 0 auto;
 	position: relative;
+	width: 100%;
+
 	
 	&.align-left {
 		justify-content: flex-start;

@@ -53,22 +53,43 @@ let sassMinCompile = function() {
   .pipe(dest(config.css.distDirMin));
 }
 
+
+/*
+* LOCAL TASK FOR GENERATING STATIC PAGES
+*/
 let views = function() {
 
-  return src([`${config.viewsDir}/*.html`])
+  return src([`${config.local.views}/*.html`])
   .pipe(dest(config.localDir));
 
 }
 
-let local = function() {
+let localSass = function() {
+  let plugins = [
+    autoprefixer({ browsers: ['last 2 version'] }),
+    discardcomments()
+  ];
+
+  return src([`${config.local.devcss}/*.scss`])
+
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
+    .pipe(postcss(plugins))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(config.local.appcss));
+}
+
+
+
+let localServe = function() {
 
   return src('app')
   .pipe(server({
     host: '127.0.0.1',
-    livereload:       true,
-    open:             true,
-    log:              'debug',
-    clientConsole:    true,
+    livereload: true,
+    open: true,
+    log: 'debug',
+    clientConsole: true,
     port: 8081
   }));
    
@@ -79,7 +100,8 @@ exports.devbuild = series(
     sassMinCompile,
     views
   ),
-  local
+  localSass,
+  localServe
 
 );
 exports.build = build;
@@ -87,7 +109,8 @@ exports.default = series(
   build,
   parallel(
     sassCompile,
-    sassMinCompile
+    sassMinCompile,
+    views
   ),
   
 );
