@@ -18,24 +18,59 @@
 
 
 
-// How to use it
-.column {
-	display: block;
+/**
+ * Row Column classes
+ * =================================
+ * Generates class for 3 breakpoints:
+ * small / medium / large
+ * example:
+ * .column-small-3
+ * .column-medium-6
+ * .column-large-8
+ */
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
 	position: relative;
 	
-	&-small {
-		@include icons-list($columns);
+	&.align-left {
+		justify-content: flex-start;
+	}
+	&.align-right {
+		justify-content: flex-end;
+	}
+	&.align-center {
+		justify-content: center;
+	}
+	&.align-justify {
+		justify-content: space-between;
+	}
+	&.align-spaced {
+		justify-content: space-around;
 	}
 
-	&-medium {
-		@include bp(medium) {
+	.column {
+		display: block;
+		position: relative;
+
+		.small {
 			@include icons-list($columns);
 		}
-	}
 	
-	&-large {
-		@include bp(large) {
-			@include icons-list($columns);
+		.medium {
+			@include bp(medium) {
+				@include icons-list($columns);
+			}
 		}
+		
+		.large {
+			@include bp(large) {
+				@include icons-list($columns);
+			}
+		}
+
 	}
+
+
 }
