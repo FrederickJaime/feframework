@@ -50,8 +50,8 @@ const ConfigOptions = function () {
 		srcDir: `${config.srcDir}/js`, // config.js.srcDir
 
 		entryPoints: {
-			kickoff: [`${this.srcDir}/js/script.js`],
-			styleguide: [`${this.srcDir}/js/styleguide.js`],
+			phoenix: [`${this.srcDir}/js/sxm.phoenix.js`],
+		//	styleguide: [`${this.srcDir}/js/styleguide.js`],
 
 			// Create more entry-points by adding to this array, e.g.
 			// foo: [`${this.srcDir}/js/bar.js`],

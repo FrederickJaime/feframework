@@ -15,9 +15,9 @@ const server = require('gulp-server-livereload');
 
 
 
+
 function build(cb) {
   cb();
-  console.log(config.css.scssDir );
  // console.log(config.pkg.title);
 }
 
@@ -51,6 +51,15 @@ let sassMinCompile = function() {
   .pipe(sourcemaps.write('.'))
   .pipe(dest(config.local.appcss))
   .pipe(dest(config.css.distDirMin));
+}
+
+let jsCompile = function() {
+
+    return src([
+      './assets/src/js/sxm.phoenix.js',
+    ])
+    .pipe(dest(config.local.appjs))
+    .pipe(dest(config.js.distDir));
 }
 
 
@@ -104,6 +113,7 @@ exports.devbuild = series(
   parallel(
     sassCompile,
     sassMinCompile,
+    jsCompile,
     views
   ),
   localSass,
@@ -117,10 +127,19 @@ exports.default = series(
   parallel(
     sassCompile,
     sassMinCompile,
+    jsCompile,
     views
   ),
   
 );
 
+
+watch(
+  `${config.css.scssDir}/*.scss`,
+  series(
+    sassCompile,
+    sassMinCompile
+  )
+)
 
 
