@@ -136,7 +136,7 @@ exports.default = series(
 
 watch(
   [
-    `${config.css.scssDir}/*.scss`,
+    `${config.css.scssDir}/**/*`,
     './assets/src/js/sxm.phoenix.js',
 
     `${config.local.devcss}/*.scss`,

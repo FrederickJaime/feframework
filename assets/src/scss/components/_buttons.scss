@@ -1,0 +1,21 @@
+
+
+/**
+ * Button Base styles
+ * =================================
+ * Button reset:
+ * no background
+ * no border
+ * no padding
+ * no margin
+ */
+button {
+  background: transparent;
+  border: 0;
+  padding:0;
+  margin:0;
+  line-height: 1;
+  font-family: $fontStandard;
+  @include fontSize(13px);
+  font-weight: map-deep-get($fontsWeight ,$fontStandard , 'regular');
+}

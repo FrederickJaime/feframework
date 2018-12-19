@@ -1,0 +1,26 @@
+
+
+.navigation {
+
+  [role="menubar"] {
+
+    background: $white;
+    list-style-type: none;
+    position: relative;
+    
+  }
+
+  &.horizantal-nav {
+    [role="menubar"] {
+      display: flex;
+    }
+  }
+
+
+  a[role="menuitem"] {
+    color: $gray_dark;
+    @include fontSize(18px);
+    text-decoration: none;
+  }
+
+}

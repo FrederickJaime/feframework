@@ -2,4 +2,12 @@
 
 .topbar {
   max-width: $layout-max-width;
+
+  button {
+    @include fontSize(13px);
+    line-height: 2.3;
+    padding: 0px 25px 0px 45px;
+    
+  }
+
 }
