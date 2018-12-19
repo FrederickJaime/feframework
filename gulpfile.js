@@ -135,10 +135,23 @@ exports.default = series(
 
 
 watch(
-  `${config.css.scssDir}/*.scss`,
+  [
+    `${config.css.scssDir}/*.scss`,
+    './assets/src/js/sxm.phoenix.js',
+
+    `${config.local.devcss}/*.scss`,
+    `${config.local.devjs}/*.js`,
+    `${config.local.devviews}/*.html`,
+  ],
   series(
-    sassCompile,
-    sassMinCompile
+    parallel(
+      sassCompile,
+      sassMinCompile,
+      jsCompile,
+      views
+    ),
+    localSass,
+    localJs
   )
 )
 
