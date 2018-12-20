@@ -73,6 +73,13 @@ let views = function() {
 
 }
 
+let images = function() {
+
+  return src([`${config.local.devimg}/*`])
+  .pipe(dest(config.local.appimg));
+
+}
+
 let localSass = function() {
   let plugins = [
     autoprefixer({ browsers: ['last 2 version'] }),
@@ -114,7 +121,8 @@ exports.devbuild = series(
     sassCompile,
     sassMinCompile,
     jsCompile,
-    views
+    views,
+    images
   ),
   localSass,
   localJs,
@@ -128,7 +136,8 @@ exports.default = series(
     sassCompile,
     sassMinCompile,
     jsCompile,
-    views
+    views,
+    
   ),
   
 );
@@ -148,7 +157,8 @@ watch(
       sassCompile,
       sassMinCompile,
       jsCompile,
-      views
+      views,
+      images
     ),
     localSass,
     localJs
