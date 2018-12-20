@@ -44,3 +44,10 @@ linters:
   StringQuotes:
     enabled: true
     style: double_quotes
+
+  NestingDepth:
+    enabled: true
+    max_depth: 3
+    ignore_parent_selectors: false
+
+

@@ -7,10 +7,10 @@
  *
  *
  */
- $fontStandard : 'Roboto', sans-serif;
+ $font-standard : 'Roboto', sans-serif;
  $fontCondense : 'Roboto Condensed', sans-serif;
  $fontsWeight: (
-	$fontStandard: (
+	$font-standard: (
 			'thin'    : 100,
 			'light'   : 300,
 			'regular' : 400,
@@ -69,15 +69,15 @@ $header-styles: (
  */
  $breakpoints: (
   xsmall  : 320px, 
-	small   : 460px,
-	medium  : 890px,
-	large   : 1200px,
+	small   : 540px,
+	medium  : 768px,
+	large   : 1024px,
 	xlarge  : 1440px
 );
 
 // Setup layout max-width
 $layout-margin                : 0px; // [in pixels] Space outside the grid
-$layout-max-width             : 1190px; // [in pixels]
+$layout-max-width             : 1440px; // [in pixels]
 $layout-min-width             : 960px;  // [in pixels] Minimum width for layout in <IE9
 
 
@@ -89,28 +89,28 @@ $layout-min-width             : 960px;  // [in pixels] Minimum width for layout 
  * There are no common breakpoints so these are just a suggestions
  */
 // Map variable
-$rowconfig: (
+$gridconfig: (
 	'small' : (
-		'padding': '4%'
+		'padding': 12px
 	),
 	'medium' : (
-		'padding': '4%'
+		'padding': 12px
 	),
 	'large' : (
-		'padding': '20px'
+		'padding': 12px
 	),
 );
 $columns: (
-	1 : "08.333333333%",
-	2 : "16.66666667%",
-	3 : "25%",
-	4 : "33.33333333%",
-	5 : "41.66666667%",
-	6 : "50%",
-  7 : "58.33333333%",
-  8 : "66.66666667%",
-  9 : "75%",
-	10 : "83.033333333%",
-	11 : "91.66666667%",
-	12 : "100%"
+	1 : 08.333333333%,
+	2 : 16.66666667%,
+	3 : 25%,
+	4 : 33.33333333%,
+	5 : 41.66666667%,
+	6 : 50%,
+  7 : 58.33333333%,
+  8 : 66.66666667%,
+  9 : 75%,
+	10 : 83.033333333%,
+	11 : 91.66666667%,
+	12 : 100%
 );

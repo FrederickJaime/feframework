@@ -1,85 +1,111 @@
 
-/**
- * Global app/site styles
- * =================================
- */
- body {
-	background-color: $color-bg;
-	font-family: $fontStandard;
+// Global app/site styles
+//=================================
+
+body {
+  background-color: $color-bg;
+  font-family: $font-standard;
 }
 
-/**
- * Default layout container
- */
+
+// Default layout container
 .l-container {
-
-	max-width: #{$layout-max-width};
-
+  max-width: #{$layout-max-width};
 }
 
+// Row Column classes
+// =================================
+// Generates class for 3 breakpoints:
+// small / medium / large
+// example:
+// .column-small-3
+// .column-medium-6
+// .column-large-8
 
-
-/**
- * Row Column classes
- * =================================
- * Generates class for 3 breakpoints:
- * small / medium / large
- * example:
- * .column-small-3
- * .column-medium-6
- * .column-large-8
- */
 .section {
-	display: block;
-	position: relative;
-	width: 100%;
+  display: block;
+  position: relative;
+  width: 100%;
 }
 
 .row {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	position: relative;
-	width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 map-deep-get($gridconfig, 'medium', 'padding' );
+  position: relative;
+  width: 100%;
 
-	
-	&.align-left {
-		justify-content: flex-start;
-	}
-	&.align-right {
-		justify-content: flex-end;
-	}
-	&.align-center {
-		justify-content: center;
-	}
-	&.align-justify {
-		justify-content: space-between;
-	}
-	&.align-spaced {
-		justify-content: space-around;
-	}
 
-	.column {
-		display: block;
-		position: relative;
 
-		&.small {
-			@include icons-list($columns);
-		}
-	
-		&.medium {
-			@include bp(medium) {
-				@include icons-list($columns);
-			}
-		}
-		
-		&.large {
-			@include bp(large) {
-				@include icons-list($columns);
-			}
-		}
+  &.align-left {
+    justify-content: flex-start;
+  }
 
-	}
+  &.align-right {
+    justify-content: flex-end;
+  }
+
+  &.align-center {
+    justify-content: center;
+  }
+
+  &.align-justify {
+    justify-content: space-between;
+  }
+
+  &.align-spaced {
+    justify-content: space-around;
+  }
+
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    padding: 0 map-deep-get($gridconfig, 'small', 'padding' );
+    @include bp(medium ) {
+      padding: 0 map-deep-get($gridconfig, 'medium', 'padding' );
+    }
+    
+    &.align-left {
+      justify-content: flex-start;
+    }
+
+    &.align-right {
+      justify-content: flex-end;
+    }
+
+    &.align-top {
+      align-items: flex-start;
+    }
+
+    &.align-bottom {
+      align-items: flex-end;
+    }
+
+    &.align-center {
+      align-items: cemter;
+    }
+
+    &.small {
+      @include icons-list($columns);
+    }
+
+    &.medium {
+      @include bp(medium) { 
+        @include icons-list($columns);
+      }
+    }
+
+    &.large {
+      @include bp(large) {
+        @include icons-list($columns);
+      }
+    }
+
+  }
 
 
 }

@@ -1,28 +1,24 @@
 
-
-
-
-/**
- * Typography text align options
- * =================================
- */
-.text-left{
-   text-align: left;
+// Typography text align options
+//=================================
+.text-left {
+  text-align: left;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
-.text-center{
+
+.text-center {
   text-align: center;
 }
-.text-justify{
+
+.text-justify {
   text-align: justify;
 }
 
-/**
- * UL list style type none
- * =================================
- */
+// UL list style type none
+// =================================
 .no-bullet {
   list-style-type: none;
 }

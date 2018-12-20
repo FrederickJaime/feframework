@@ -15,7 +15,7 @@ button {
   padding:0;
   margin:0;
   line-height: 1;
-  font-family: $fontStandard;
+  font-family: $font-standard;
   @include fontSize(13px);
-  font-weight: map-deep-get($fontsWeight ,$fontStandard , 'regular');
+  font-weight: map-deep-get($fontsWeight ,$font-standard , 'regular');
 }
