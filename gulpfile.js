@@ -9,6 +9,7 @@ const autoprefixer = require('autoprefixer');
 const config = require('./.phoenix/config');
 const cssnano = require('cssnano');
 const server = require('gulp-server-livereload');
+const sasslint = require('gulp-sass-lint');
 
 
 
@@ -21,17 +22,31 @@ function build(cb) {
  // console.log(config.pkg.title);
 }
 
+let sassClean = function() {
+
+  return src([`${config.css.scssDir}/**/*`])
+    .pipe(sasslint())
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+  
+}
+
 let sassCompile = function() {
   let plugins = [
     autoprefixer({ browsers: ['last 2 version'] }),
-    discardcomments()
+    discardcomments(),
+    //stylelint()
   ];
 
   return src([`${config.css.scssDir}/sxm.phoenix.scss`])
-
+  
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
+
+
     .pipe(postcss(plugins))
+  
+    
     .pipe(sourcemaps.write('.'))
     .pipe(dest(config.css.distDir));
 }
@@ -117,7 +132,9 @@ let localServe = function() {
    
 }
 exports.devbuild = series(
+  sassClean,
   parallel(
+   
     sassCompile,
     sassMinCompile,
     jsCompile,
@@ -132,6 +149,7 @@ exports.devbuild = series(
 exports.build = build;
 exports.default = series(
   build,
+  sassClean,
   parallel(
     sassCompile,
     sassMinCompile,

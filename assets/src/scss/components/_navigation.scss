@@ -2,9 +2,11 @@
 
 .navigation {
 
+  background: $white;
+
   [role="menubar"] {
 
-    background: $white;
+    
     list-style-type: none;
     position: relative;
     

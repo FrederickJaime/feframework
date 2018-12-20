@@ -4,6 +4,7 @@
   "description": "A lightweight front-end framework for creating scalable, responsive websites",
   "main": "index.js",
   "homepage": "n/a",
+  "sasslintConfig": ".sass-lint.yml",
   "repository": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +22,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-server-livereload": "^1.9.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-util": "^3.0.8",
