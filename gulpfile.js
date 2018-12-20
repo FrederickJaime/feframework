@@ -161,6 +161,7 @@ exports.default = series(
 );
 
 
+
 watch(
   [
     `${config.css.scssDir}/**/*`,
@@ -171,6 +172,7 @@ watch(
     `${config.local.devviews}/*.html`,
   ],
   series(
+    sassClean,
     parallel(
       sassCompile,
       sassMinCompile,
