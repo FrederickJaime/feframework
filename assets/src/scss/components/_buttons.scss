@@ -18,21 +18,52 @@ button {
   @include font-size(13px);
   font-weight: map-deep-get($fonts-weight, $font-standard, regular);
 
+}
 
-  &.button {
-    background: $blue-medium;
-    display: block;
-    @include font-size(16px);
-    font-weight: map-deep-get($fonts-weight, $font-standard, bold);
-    line-height: 1.375;
-    position: relative;
-    width: 100%;
+.button {
+  background: $blue-medium;
+  border-radius: 6px;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  @include font-size(16px);
+  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+  line-height: 1.375;
+  padding: 17px 0;
+  position: relative;
+  transition: background .1s ease-in-out, color .1s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 
+  &:hover {
+    background: $blue-dark;
+  }
 
-    @include bp(medium) {
-      max-width: 296px;
+  &.dark {
+    background: $white;
+    color: $blue-medium;
+
+    &:hover {
+      color: $blue-dark;
     }
 
+    &.disabled {
+      background: $gray-light;
+      color: $gray-medium;
+      pointer-events: none;
+    }
+  }
+
+  &.disabled {
+    background: $gray-light;
+    color: $gray-medium;
+    pointer-events: none;
+  }
+
+
+  @include bp(medium) {
+    max-width: 296px;
   }
 
 }
