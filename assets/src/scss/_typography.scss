@@ -11,6 +11,11 @@ h1,
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h1, font-size));
   }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h1, font-size));
+  }
+
 }
 
 h2,
@@ -20,6 +25,11 @@ h2,
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h2, font-size));
   }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h2, font-size));
+  }
+
 }
 
 h3,
@@ -28,6 +38,10 @@ h3,
 
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h3, font-size));
+  }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h3, font-size));
   }
 }
 
@@ -38,6 +52,10 @@ h4,
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h4, font-size));
   }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h4, font-size));
+  }
 }
 
 h5,
@@ -47,6 +65,10 @@ h5,
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h5, font-size));
   }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h5, font-size));
+  }
 }
 
 h6,
@@ -55,6 +77,10 @@ h6,
 
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h6, font-size));
+  }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, h6, font-size));
   }
 }
 
@@ -73,4 +99,10 @@ h6,
   line-height: $header-lineheight;
   margin-bottom: $header-margin-bottom;
   margin-top: $header-margin-top;
+
+
+  b {
+    font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+  }
+
 }
