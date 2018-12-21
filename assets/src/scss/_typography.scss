@@ -4,12 +4,27 @@
 // =================================
 // variables coming from _variables.scss Headers
 
+.mega-headline {
+  font-weight: map-deep-get($fonts-weight, $font-standard, thin);
+  @include font-size(map-deep-get($header-styles, small, mega, font-size));
+
+  @include bp(medium) {
+    @include font-size(map-deep-get($header-styles, medium, mega, font-size));
+  }
+
+  @include bp(large) {
+    @include font-size(map-deep-get($header-styles, large, mega, font-size));
+  }
+}
+
 h1,
 .h1 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, light);
   @include font-size(map-deep-get($header-styles, small, h1, font-size));
 
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h1, font-size));
+    font-weight: map-deep-get($fonts-weight, $font-standard, thin);
   }
 
   @include bp(large) {
@@ -20,10 +35,12 @@ h1,
 
 h2,
 .h2 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, light);
   @include font-size(map-deep-get($header-styles, small, h2, font-size));
 
   @include bp(medium) {
     @include font-size(map-deep-get($header-styles, medium, h2, font-size));
+    font-weight: map-deep-get($fonts-weight, $font-standard, thin);
   }
 
   @include bp(large) {
@@ -34,6 +51,7 @@ h2,
 
 h3,
 .h3 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
   @include font-size(map-deep-get($header-styles, small, h3, font-size));
 
   @include bp(medium) {
@@ -47,6 +65,7 @@ h3,
 
 h4,
 .h4 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, regular);
   @include font-size(map-deep-get($header-styles, small, h4, font-size));
 
   @include bp(medium) {
@@ -60,6 +79,7 @@ h4,
 
 h5,
 .h5 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
   @include font-size(map-deep-get($header-styles, small, h5, font-size));
 
   @include bp(medium) {
@@ -73,6 +93,7 @@ h5,
 
 h6,
 .h6 {
+  font-weight: map-deep-get($fonts-weight, $font-standard, regular);
   @include font-size(map-deep-get($header-styles, small, h6, font-size));
 
   @include bp(medium) {
