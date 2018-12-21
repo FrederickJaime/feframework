@@ -154,8 +154,9 @@ h6,
 // variables coming from _variables.scss
 p {
   @include font-size(map-deep-get($bodycopy-styles, small, font-size));
-  line-height: map-deep-get($bodycopy-styles, small, line-height);
   font-weight: map-deep-get($fonts-weight, $font-standard, light);
+  line-height: map-deep-get($bodycopy-styles, small, line-height);
+  margin: 16px 0 24px;
 
   @include bp(large) {
     @include font-size(map-deep-get($bodycopy-styles, large, font-size));
