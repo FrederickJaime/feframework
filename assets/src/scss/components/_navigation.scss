@@ -21,7 +21,7 @@
 
   a[role="menuitem"] {
     color: $gray_dark;
-    @include fontSize(18px);
+    @include font-size(18px);
     text-decoration: none;
   }
 

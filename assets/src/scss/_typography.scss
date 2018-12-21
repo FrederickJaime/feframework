@@ -6,55 +6,55 @@
 
 h1,
 .h1 {
-  @include fontSize(map-deep-get($header-styles, small, h1, font-size));
+  @include font-size(map-deep-get($header-styles, small, h1, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h1, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h1, font-size));
   }
 }
 
 h2,
 .h2 {
-  @include fontSize(map-deep-get($header-styles, small, h2, font-size));
+  @include font-size(map-deep-get($header-styles, small, h2, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h2, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h2, font-size));
   }
 }
 
 h3,
 .h3 {
-  @include fontSize(map-deep-get($header-styles, small, h3, font-size));
+  @include font-size(map-deep-get($header-styles, small, h3, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h3, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h3, font-size));
   }
 }
 
 h4,
 .h4 {
-  @include fontSize(map-deep-get($header-styles, small, h4, font-size));
+  @include font-size(map-deep-get($header-styles, small, h4, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h4, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h4, font-size));
   }
 }
 
 h5,
 .h5 {
-  @include fontSize(map-deep-get($header-styles, small, h5, font-size));
+  @include font-size(map-deep-get($header-styles, small, h5, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h5, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h5, font-size));
   }
 }
 
 h6,
 .h6 {
-  @include fontSize(map-deep-get($header-styles, small, h6, font-size));
+  @include font-size(map-deep-get($header-styles, small, h6, font-size));
 
   @include bp(medium) {
-    @include fontSize(map-deep-get($header-styles, medium, h6, font-size));
+    @include font-size(map-deep-get($header-styles, medium, h6, font-size));
   }
 }
 

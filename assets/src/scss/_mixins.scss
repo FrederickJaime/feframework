@@ -1,64 +1,53 @@
 
 
-/**
- * Px to Rem
- * =================================
- * useage:
- * @include fontSize(20px);
- *
- */
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
+// Px to Rem
+// =================================
+// useage:
+// @include fontSize(20px);
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+  @return #{$rem-size}rem;
 }
 
-@mixin fontSize($size) {
-  font-size: calculateRem($size);
+@mixin font-size($size) {
+  font-size: calculate-rem($size);
 }
 
 
 
 
-/**
- * Map deep get
- * =================================
- * useage:
- * map-deep-get($header-styles, small, h1, font-size)
- * based on Headers _variables.scss
- *
- */
-/// @author Hugo Giraudel
-/// @access public
-/// @param {Map} $map - Map
-/// @param {Arglist} $keys - Key chain
-/// @return {*} - Desired value
+// Map deep get
+// =================================
+// useage:
+// map-deep-get($header-styles, small, h1, font-size)
+// based on Headers _variables.scss
+
+// @author Hugo Giraudel
+// @access public
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-      $map: map-get($map, $key);
+    $map: map-get($map, $key);
   }
   @return $map;
 }
 
 
 
-/**
- * Breakpoint include
- * =================================
- * useage:
- * @include bp(medium) { @content }
- *
- */
-@mixin bp($breakpoint) { 
+// Breakpoint include
+// =================================
+// useage:
+// @include bp(medium) { @content }
+@mixin bp($breakpoint) {
 
   @if map-has-key($breakpoints, $breakpoint) {
     @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
       @content;
     }
-  }
-
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
   }
 
 }
@@ -70,15 +59,11 @@
   @each $icon-name, $icon in $map {
 
     @if not map-has-key($map, $icon-name) {
-      @warn "'#{$icon-name}' is not a valid icon name";
-    }
-
-    @else {
+      @warn ''#{$icon-name}' is not a valid icon name';
+    } @else {
       &-#{$icon-name} {
         width: $icon;
       }
-    } 
+    }
   }
 }
-
-
