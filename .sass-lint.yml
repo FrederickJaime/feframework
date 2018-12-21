@@ -1,5 +1,11 @@
 severity: error
 
+
+rules:
+ # Mixins
+  mixins-before-declarations: 0
+
+
 linters:
 
   BorderZero:

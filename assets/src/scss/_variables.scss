@@ -54,7 +54,15 @@ $header-styles: (
     'h4': ('font-size': 25px),
     'h5': ('font-size': 20px),
     'h6': ('font-size': 16px)
-  )
+	),
+	'large': (
+		'h1': ('font-size': 48px),
+    'h2': ('font-size': 40px),
+    'h3': ('font-size': 31px),
+    'h4': ('font-size': 25px),
+    'h5': ('font-size': 20px),
+    'h6': ('font-size': 16px)	
+	)
 );
 
 
@@ -77,8 +85,8 @@ $header-styles: (
 
 // Setup layout max-width
 $layout-margin                : 0px; // [in pixels] Space outside the grid
-$layout-max-width             : 1440px; // [in pixels]
-$layout-min-width             : 960px;  // [in pixels] Minimum width for layout in <IE9
+$layout-max-width             : 1248px; // [in pixels]
+$layout-min-width             : 320px;  // [in pixels] Minimum width for layout in <IE9
 
 
 

@@ -32,7 +32,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0 map-deep-get($gridconfig, 'medium', 'padding' );
+  padding: 0 map-deep-get($gridconfig, 'medium', 'padding');
   position: relative;
   width: 100%;
 
@@ -59,16 +59,22 @@ body {
   }
 
   .column {
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding: 0 map-deep-get($gridconfig, 'small', 'padding');
     position: relative;
-    
-    padding: 0 map-deep-get($gridconfig, 'small', 'padding' );
-    @include bp(medium ) {
-      padding: 0 map-deep-get($gridconfig, 'medium', 'padding' );
+
+    @include bp(medium) {
+      padding: 0 map-deep-get($gridconfig, 'medium', 'padding');
     }
+
     
+    &.no-padding {
+      padding: 0;
+    }
+
     &.align-left {
       justify-content: flex-start;
     }
@@ -94,7 +100,7 @@ body {
     }
 
     &.medium {
-      @include bp(medium) { 
+      @include bp(medium) {
         @include icons-list($columns);
       }
     }

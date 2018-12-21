@@ -18,5 +18,11 @@ html {
 	box-sizing: inherit;
 }
 
+img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
 
 @include normalize();

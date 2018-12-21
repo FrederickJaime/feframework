@@ -4,7 +4,6 @@
   "description": "A lightweight front-end framework for creating scalable, responsive websites",
   "main": "index.js",
   "homepage": "n/a",
-  "sasslintConfig": ".sass-lint.yml",
   "repository": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
