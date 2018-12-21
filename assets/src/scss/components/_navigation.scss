@@ -4,23 +4,23 @@
 
   background: $white;
 
-  [role="menubar"] {
+  [role='menubar'] {
 
     list-style-type: none;
     margin: 0;
     position: relative;
-    
+
   }
 
   &.horizantal-nav {
-    [role="menubar"] {
+    [role='menubar'] {
       display: flex;
     }
   }
 
 
-  a[role="menuitem"] {
-    color: $gray_dark;
+  [role='menuitem'] {
+    color: $gray-dark;
     @include font-size(18px);
     text-decoration: none;
   }

@@ -2,9 +2,10 @@ severity: error
 
 
 rules:
- # Mixins
+
   mixins-before-declarations: 0
   no-warn: 0
+  property-sort-order: 0
 
 
 
