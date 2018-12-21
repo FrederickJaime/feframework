@@ -75,23 +75,23 @@ body {
     }
 
     &.align-left {
-      justify-content: flex-start;
-    }
-
-    &.align-right {
-      justify-content: flex-end;
-    }
-
-    &.align-top {
       align-items: flex-start;
     }
 
-    &.align-bottom {
+    &.align-right {
       align-items: flex-end;
     }
 
+    &.align-top {
+      justify-content: flex-start;
+    }
+
+    &.align-bottom {
+      justify-content: flex-end;
+    }
+
     &.align-center {
-      align-items: cemter;
+      justify-content: cemter;
     }
 
     &.small {

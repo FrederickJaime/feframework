@@ -16,5 +16,25 @@ button {
   line-height: 1;
   font-family: $font-standard;
   @include font-size(13px);
-  font-weight: map-deep-get($fonts-weight, $font-standard, 'regular');
+  font-weight: map-deep-get($fonts-weight, $font-standard, regular);
+
+
+  &.button {
+    background: $blue-medium;
+    display: block;
+    @include font-size(16px);
+    font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+    line-height: 1.375;
+    position: relative;
+    width: 100%;
+
+
+    @include bp(medium) {
+      max-width: 296px;
+    }
+
+  }
+
 }
+
+
