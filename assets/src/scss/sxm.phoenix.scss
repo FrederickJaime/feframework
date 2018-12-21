@@ -1,120 +1,59 @@
-/**
- ______  ____  __ ____  _                      _      
-/ ___\ \/ /  \/  |  _ \| |__   ___   ___ _ __ (_)_  __
-\___ \\  /| |\/| | |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /
- ___) /  \| |  | |  __/| | | | (_) |  __/ | | | |>  < 
-|____/_/\_\_|  |_|_|   |_| |_|\___/ \___|_| |_|_/_/\_\
 
- * By BSS / SXM
- * http://
- *
- * Project dependencies
- * =================================
- * - Mixins, helpers and functions
- * - Core variables
- * - CSS resets
- * - Typography styles
- * - Components
- * - Partials
- * - Views
- * - Global styles
- * - Helper/utility classes
- * - Print styles
- *
- * Read about our distinction between views, partials and components at
- * https://
- *
- *
- */
+//  ______  ____  __ ____  _                      _      
+// / ___\ \/ /  \/  |  _ \| |__   ___   ___ _ __ (_)_  __
+// \___ \\  /| |\/| | |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /
+//  ___) /  \| |  | |  __/| | | | (_) |  __/ | | | |>  < 
+// |____/_/\_\_|  |_|_|   |_| |_|\___/ \___|_| |_|_/_/\_\
 
 
+// By BSS / SXM
+// http://
+//
+// Project dependencies
+// =================================
+// - Mixins, helpers and functions
+// - Core variables
+// - CSS resets
+// - Typography styles
+// - Components
+// - Partials
+// - Views
+// - Global styles
+// - Helper/utility classes
+// - Print styles
 
-/*
- * Mixins, helpers and functions
- */
- @import "mixins";
+// Read about our distinction between views, partials and components at
+// https://
+//
 
- 
- /**
-  * Core variables
-  * Edit your color palette and app vars before your begin
-  */
- @import "color-palette";
- @import "variables";
- 
- 
- /**
-  * CSS resets
-  */
- @import "reset";
- 
- 
- /**
-  * Typography styles
-  * See https:// for more info
-  */
- @import "typography";
- 
- 
- /**
-  * Components
-  * See https:// for more info
-  *
-  * Note: place all 3rd party components at the top of the list
-  */
 
-  @import "components";
-  /*
-  @import "components/links";
-  @import "components/buttons";
-  @import "components/lists";
-  @import "components/embedded-content"; // images etc
-  @import "components/icons";
-  @import "components/skip-navigation";
-  @import "components/code";
-  @import "components/tables";
-  @import "components/scrollbars";
-  yo:start -- component
-  yo:end -- component
- */
- 
- 
- /**
-  * Partials
-  */
-  /*
-  @import "partials/masthead"; // Example partial for masthead
-  @import "partials/footer"; // Example partial for footer
-  @import "partials/browser-upgrade"; // Styles to show an upgrade message to users on old browsers
-  yo:start -- partial
-  yo:end -- partial
-*/ 
- 
- /**
-  * Views
-  */
-  /*
-  @import "views/home";
-  @import "views/contact";
-  yo:start -- view
-  yo:end -- view
- */
- 
- 
- /**
-  * Global styles
-  */
- @import "global";
- 
- 
- /**
-  * Helper/utility classes
-  */
- @import "helper-classes";
- 
- /**
-  * Print styles
-  */
-  /*
-  @import "views/print";
- */
+// Mixins, helpers and functions
+@import 'mixins';
+
+
+// Core variables
+// Edit your color palette and app vars before your begin
+@import 'color-palette';
+@import 'variables';
+
+
+// CSS resets
+@import 'reset';
+
+
+// Typography styles
+// See https:// for more info
+@import 'typography';
+
+
+// Components 
+@import 'components';
+
+
+// Global styles
+@import 'global';
+
+
+// Helper/utility classes
+@import 'helper-classes';
+
