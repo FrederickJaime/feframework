@@ -1,11 +1,9 @@
 
 
-/**
- * Headers 
- * =================================
- * variables coming from _variables.scss Headers
- *
- */
+// Headers 
+// =================================
+// variables coming from _variables.scss Headers
+
 h1,
 .h1 {
   @include fontSize(map-deep-get($header-styles, small, h1, font-size));
@@ -75,8 +73,4 @@ h6,
   line-height: $header-lineheight;
   margin-bottom: $header-margin-bottom;
   margin-top: $header-margin-top;
-}
-
-p {
-  
 }
