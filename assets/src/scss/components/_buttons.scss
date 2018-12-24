@@ -68,4 +68,21 @@ button {
 
 }
 
+.text-link {
+  color: $black;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+  text-decoration: underline;
+
+  &.dark {
+    color: $white;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
 

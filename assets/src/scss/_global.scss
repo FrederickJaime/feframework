@@ -2,6 +2,7 @@
 // Global app/site styles
 //=================================
 * {
+  // sass-lint:disable no-vendor-prefixes
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,8 +40,6 @@ body {
   padding: 0 map-deep-get($gridconfig, 'medium', 'padding');
   position: relative;
   width: 100%;
-
-
 
   &.align-left {
     justify-content: flex-start;
