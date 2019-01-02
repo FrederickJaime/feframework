@@ -1,4 +1,19 @@
 
 .mvp-component--threecol {
   background-color: $gray-light;
+  padding: 96px 0;
+
+  &-title {
+    margin-bottom: 64px;
+  }
+
+  &-image {
+    max-width: 248px;
+  }
+
+  &-copy {
+    font-weight: 300;
+    margin: 32px 0 40px;
+    max-width: 288px;
+  }
 }

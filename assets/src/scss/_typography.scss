@@ -168,3 +168,9 @@ p {
   }
 
 }
+
+.small-copy {
+  @include font-size(map-deep-get($bodycopy-styles, xsmall, font-size));
+  line-height: map-deep-get($bodycopy-styles, xsmall, line-height);
+  color: $gray-medium;
+}
