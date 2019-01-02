@@ -1,13 +1,29 @@
 
 
 .topbar {
-  max-width: $layout-max-width;
+  background-color: $gray-light;
 
-  button {
+  &-content--button {
+    color: $black;
     @include font-size(13px);
-    line-height: 2.3;
-    padding: 0 25px 0 45px;
+    font-weight: map-deep-get($fonts-weight, $font-standard, regular);
+    line-height: 1.55;
+    padding: 5px 0 5px 49px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: 17px 17px;
+
+    &.support-btn {
+      background-image: url('../images/ico_help.png');
+      background-position: 18% 50%;
+    }
+
+    &.account-btn {
+      background-image: url('../images/ico_profile.png');
+      background-position: 13% 50%;
+    }
 
   }
 
 }
+
