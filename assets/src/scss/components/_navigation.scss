@@ -8,21 +8,75 @@
 
     list-style-type: none;
     margin: 0;
+    padding: 0;
     position: relative;
 
   }
+  // Horizontal nav initial styles
+  //=================================
+  &.horizontal-nav {
+    align-items: center;
+    display: flex;
+    padding: 32px 12px;
+    justify-content: space-between;
 
-  &.horizantal-nav {
     [role='menubar'] {
       display: flex;
+    }
+
+    li:last-child {
+
+      [role='menuitem'] {
+        padding-right: 0;
+      }
+
+    }
+  }
+
+  // Main Navigation
+  //=================================
+  &.horizontal-nav.main {
+
+    .navigation-logo {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    [role='menubar'] {
+      display: none;
+    }
+
+    @include bp(medium) {
+
+      .navigation-logo {
+        left: 0%;
+        transform: translateX(0%);
+      }
+
+      [role='menubar'] {
+        display: flex;
+      }
     }
   }
 
 
   [role='menuitem'] {
-    color: $gray-dark;
-    @include font-size(18px);
+    color: $black;
+    font-weight: map-deep-get($fonts-weight, $font-standard, regular);
     text-decoration: none;
+    transition: padding .25s ease, font-size .25s ease;
+
+    @include bp(medium) {
+      @include font-size(15px);
+      line-height: 1.53;
+      padding: 0 16px;
+    }
+    @include bp(large) {
+      @include font-size(16px);
+      line-height: 1.5;
+      padding: 0 24px;
+    }
   }
 
 }
