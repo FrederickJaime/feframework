@@ -156,7 +156,7 @@ p {
   @include font-size(map-deep-get($bodycopy-styles, small, font-size));
   font-weight: map-deep-get($fonts-weight, $font-standard, light);
   line-height: map-deep-get($bodycopy-styles, small, line-height);
-  margin: 24px 0 24px;
+  margin: 24px 0;
 
   @include bp(large) {
     @include font-size(map-deep-get($bodycopy-styles, large, font-size));
