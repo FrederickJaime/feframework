@@ -52,7 +52,12 @@
   margin-bottom: 0;
 }
 
-.content-width {
+.content-container {
+  display: block;
+  height: auto;
+  margin: 0 auto;
   max-width: $layout-max-width;
   min-width: $layout-min-width;
+  position: relative;
+
 }
