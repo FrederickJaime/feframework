@@ -51,3 +51,8 @@
 .no-margin-bottom {
   margin-bottom: 0;
 }
+
+.content-width {
+  max-width: $layout-max-width;
+  min-width: $layout-min-width;
+}

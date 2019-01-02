@@ -61,6 +61,22 @@ body {
     justify-content: space-around;
   }
 
+  &.row-reverse-small {
+    flex-direction: row-reverse;
+  }
+
+  &.row-reverse-medium {
+    @include bp(medium) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.row-reverse-large {
+    @include bp(large) {
+      flex-direction: row-reverse;
+    }
+  }
+
   .column {
     align-items: center;
     display: flex;
@@ -94,22 +110,22 @@ body {
     }
 
     &.align-center {
-      justify-content: cemter;
+      justify-content: center;
     }
 
     &.small {
-      @include icons-list($columns);
+      @include item-list($columns, false, width);
     }
 
     &.medium {
       @include bp(medium) {
-        @include icons-list($columns);
+        @include item-list($columns, false, width);
       }
     }
 
     &.large {
       @include bp(large) {
-        @include icons-list($columns);
+        @include item-list($columns, false, width);
       }
     }
 
