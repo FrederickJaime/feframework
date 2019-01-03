@@ -74,20 +74,34 @@ a {
   cursor: pointer;
   font-size: inherit;
   font-weight: map-deep-get($fonts-weight, $font-standard, bold);
-  text-decoration: underline;
+  text-decoration: none;
+
 
   &.dark {
     color: $white;
   }
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
+
+
   }
 
 }
 
 .text-link {
   @include font-size(14px);
+  position: relative;
+
+
+  //&:before {
+  //  border: 1px dotted $white;
+  //  bottom: 0;
+  //  content: '';
+  //  height: 1px;
+  //  width: 100%;
+  //  position: absolute;
+  //}
 }
 
 

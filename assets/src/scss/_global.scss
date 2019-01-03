@@ -59,10 +59,15 @@ body {
 
   &.align-spaced {
     justify-content: space-around;
+
   }
 
   &.row-reverse-small {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+
+    @include bp(medium) {
+      flex-direction: row;
+    }
   }
 
   &.row-reverse-medium {
