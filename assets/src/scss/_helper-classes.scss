@@ -1,12 +1,15 @@
 
 // Typography text align options
 //=================================
+// ** need to refactor with better breapoint mixin
 .text-left {
   text-align: left;
 }
 
-.text-left-small {
-  
+.text-left-small-only {
+  @media (max-width: #{map-get($breakpoints, medium)}) {
+    text-align: left;
+  }
 }
 
 .text-right {
@@ -15,6 +18,19 @@
 
 .text-center {
   text-align: center;
+}
+
+.text-center-medium-up {
+  @media (min-width: #{map-get($breakpoints, medium)}) {
+    text-align: center;
+  }
+}
+
+.text-center-medium-only {
+  @media (min-width: #{map-get($breakpoints, medium)}) and (max-width: #{map-get($breakpoints, large)}) {
+    text-align: center;
+    text-decoration: underline;
+  }
 }
 
 .text-justify {

@@ -1,14 +1,31 @@
 
 .mvp-component--threecol {
   background-color: $gray-light;
-  padding: 72px 0;
+  padding: 56px 0 48px;
+
+  @include bp(medium) {
+    padding: 72px 0;
+  }
 
   @include bp(large) {
     padding: 96px 0;
   }
 
   &-title {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
+
+    @include bp(medium) {
+      margin-bottom: 64px;
+    }
+
+  }
+
+  &-point {
+    margin-bottom: 24px;
+  
+    @include bp(medium) {
+      margin-bottom: 0;
+    }
   }
 
   &-image {
@@ -27,16 +44,38 @@
 
   &-copy {
     font-weight: 300;
-    margin: 32px 0 40px;
-    max-width: 288px;
+
+    @include bp(medium) {
+      margin: 24px 0 32px;
+      max-width: 216px;
+    }
+
+    @include bp(large) {
+      margin: 32px 0 40px;
+      max-width: 288px;
+    }
+
   }
 
   &-disclaimer {
-    margin: 0 0 40px;
+    margin: 8px 0 32px;
+
+    @include bp(medium) {
+      margin: 0 0 32px;
+    }
+
+    @include bp(large) {
+      margin: 0 0 40px;
+    }
+
   }
 
   &-cta {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+
+    @include bp(large) {
+      margin-bottom: 32px;
+    }
   }
 
 }
