@@ -3,10 +3,9 @@
 
   &-hero {
     height: auto;
-    
     background-position: 50% 50%;
     background-size: cover;
-    background-color: #812990;
+    background-color: $purple;
     //margin-bottom: 50px;
 
     @include bp(medium) {
@@ -18,8 +17,6 @@
     color: $white;
     max-width: $layout-max-width;
     padding: 24px 0 40px;
-
- 
 
     &-copy--eyebrow {
       display: block;
@@ -40,7 +37,7 @@
       @include bp(medium) {
         margin-bottom: 0;
       }
-      
+
     }
 
     @include bp(medium) {
@@ -64,7 +61,7 @@
         @include bp(medium) {
           border-right: 1px solid $white;
           margin-bottom: 0;
-          padding-left: 0       
+          padding-left: 0;
         }
 
       }

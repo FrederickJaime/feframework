@@ -14,7 +14,15 @@
   &-copy {
     font-weight: 300;
     margin: 32px 0 40px;
-    max-width: 288px;
+
+    @include bp(medium) {
+      max-width: 184px;
+    }
+
+    @include bp(large) {
+      max-width: 288px;
+    }
+
   }
 
   &-disclaimer {
