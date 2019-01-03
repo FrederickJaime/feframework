@@ -86,7 +86,7 @@ $layout-min-width: 320px;
 
 
 
-// Map variable
+
 // Columns config
 //  ================================= 
 $gridconfig: (
@@ -117,3 +117,10 @@ $columns: (
   12: 100%
 );
 
+// Visibility options
+//  ================================= 
+$visibility-config: (
+  small: visible,
+  medium: visible,
+  large: visible
+)

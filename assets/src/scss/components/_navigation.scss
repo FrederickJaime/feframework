@@ -12,6 +12,7 @@
     position: relative;
 
   }
+
   // Horizontal nav initial styles
   //=================================
   &.horizontal-nav {
@@ -24,41 +25,46 @@
       display: flex;
     }
 
-    li:last-child {
+    li {
 
-      [role='menuitem'] {
-        padding-right: 0;
+      &:last-of-type {
+        [role='menuitem'] {
+          padding-right: 0;
+        }
       }
 
     }
-  }
 
-  // Main Navigation
-  //=================================
-  &.horizontal-nav.main {
-
-    .navigation-logo {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    [role='menubar'] {
-      display: none;
-    }
-
-    @include bp(medium) {
+    // Main Navigation
+    //=================================
+    &.main {
 
       .navigation-logo {
-        left: 0%;
-        transform: translateX(0%);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       [role='menubar'] {
-        display: flex;
+        display: none;
+      }
+
+      @include bp(medium) {
+
+        .navigation-logo {
+          left: 0%;
+          transform: translateX(0%);
+        }
+
+        [role='menubar'] {
+          display: flex;
+        }
       }
     }
+
   }
+
+
 
 
   [role='menuitem'] {

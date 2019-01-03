@@ -59,5 +59,37 @@
   max-width: $layout-max-width;
   min-width: $layout-min-width;
   position: relative;
+}
 
+// visibility 
+// =================================
+.hide-small {
+  display: none;
+  visibility: hidden;
+
+  @include bp(medium) {
+    display: inherit;
+    visibility: visible;
+  }
+}
+
+.hide-medium {
+
+  @include bp(medium) {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include bp(large) {
+    display: inherit;
+    visibility: visible;
+  }
+}
+
+.hide-large {
+
+  @include bp(large) {
+    display: none;
+    visibility: hidden;
+  }
 }
