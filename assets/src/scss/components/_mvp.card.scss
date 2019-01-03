@@ -3,7 +3,11 @@
 .mvp-component--card {
 
   &-content {
-    margin: 68px 0;
+    margin: 56px 0;
+
+    @include bp(medium) {
+      margin: 68px 0;
+    }
   }
 
 }

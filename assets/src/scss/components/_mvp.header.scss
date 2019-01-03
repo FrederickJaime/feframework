@@ -1,0 +1,86 @@
+
+.header {
+
+  &-hero {
+    height: auto;
+    
+    background-position: 50% 50%;
+    background-size: cover;
+    background-color: #812990;
+    //margin-bottom: 50px;
+
+    @include bp(medium) {
+      background-image: url('../images/roku-background-hero-purple.png');
+    }
+  }
+
+  &-hero--content {
+    color: $white;
+    max-width: $layout-max-width;
+    padding: 24px 0 40px;
+
+ 
+
+    &-copy--eyebrow {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 16px;
+    }
+
+    &-image {
+      margin-bottom: 16px;
+
+      img {
+        max-width: 600px;
+      }
+
+      @include bp(medium) {
+        margin-bottom: 0;
+      }
+      
+    }
+
+    @include bp(medium) {
+      padding: 50px 0;
+    }
+  }
+
+  &-hero--links {
+    margin-top: 24px;
+    width: 100%;
+
+    a {
+      display: block;
+      @include font-size(14px);
+      padding: 0 16px;
+      text-align: center;
+
+      &:first-child {
+        margin-bottom: 17px;
+
+        @include bp(medium) {
+          border-right: 1px solid $white;
+          margin-bottom: 0;
+          padding-left: 0       
+        }
+
+      }
+
+      @include bp(medium) {
+        display: inline;
+      }
+
+    }
+
+    @include bp(medium) {
+      margin-top: 16px;
+      width: auto;
+    }
+
+
+  }
+
+}
