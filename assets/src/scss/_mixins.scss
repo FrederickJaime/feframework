@@ -51,7 +51,8 @@
   }
 
 }
-
+// *** NEED TO UPDATE BASED ON MAPPY
+// https://github.com/FrederickJaime/mappy-breakpoints
 
 
 // Mixin doing a loop of object and adding property to go with value
@@ -94,7 +95,7 @@
 
 }
 
-// Mixin itself
+// Clearfix
 @mixin clearfix {
   &::after {
     display: block;

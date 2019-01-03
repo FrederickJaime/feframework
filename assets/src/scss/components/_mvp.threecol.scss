@@ -1,28 +1,34 @@
 
 .mvp-component--threecol {
   background-color: $gray-light;
-  padding: 96px 0;
+  padding: 72px 0;
+
+  @include bp(large) {
+    padding: 96px 0;
+  }
 
   &-title {
     margin-bottom: 64px;
   }
 
   &-image {
-    max-width: 248px;
-  }
-
-  &-copy {
-    font-weight: 300;
-    margin: 32px 0 40px;
+    max-width: 132px;
 
     @include bp(medium) {
       max-width: 184px;
     }
 
     @include bp(large) {
-      max-width: 288px;
+      max-width: 248px;
     }
 
+    transition: max-width .15s ease;
+  }
+
+  &-copy {
+    font-weight: 300;
+    margin: 32px 0 40px;
+    max-width: 288px;
   }
 
   &-disclaimer {
