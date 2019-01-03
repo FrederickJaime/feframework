@@ -16,6 +16,18 @@
   text-align: right;
 }
 
+.text-right-small-only {
+  @media (max-width: #{map-get($breakpoints, medium)}) {
+    text-align: right;
+  }
+}
+
+.text-right-medium-up {
+  @media (min-width: #{map-get($breakpoints, medium)}) {
+    text-align: right;
+  }
+}
+
 .text-center {
   text-align: center;
 }

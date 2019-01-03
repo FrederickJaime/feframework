@@ -22,7 +22,7 @@
 
   &-point {
     margin-bottom: 24px;
-  
+
     @include bp(medium) {
       margin-bottom: 0;
     }

@@ -106,6 +106,12 @@ body {
       align-items: flex-end;
     }
 
+    &.align-right-medium-up {
+      @media (min-width: #{map-get($breakpoints, medium)}) {
+        align-items: flex-end;
+      }
+    }
+
     &.align-top {
       justify-content: flex-start;
     }
