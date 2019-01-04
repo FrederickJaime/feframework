@@ -12,7 +12,19 @@ const server = require('gulp-server-livereload');
 const sasslint = require('gulp-sass-lint');
 
 
-
+const pump = require('pump');
+const del = require('del');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const browserSync = require('browser-sync').create();
+const vinylNamed = require('vinyl-named');
+const through2 = require('through2');
+const gulpZip = require('gulp-zip');
+const gulpUglify = require('gulp-uglify');
+const postcssUncss = require('postcss-uncss');
+const gulpSourcemaps = require('gulp-sourcemaps');
+const gulpPostcss = require('gulp-postcss');
+const gulpBabel = require('gulp-babel');
 
 
 
@@ -78,6 +90,31 @@ let jsCompile = function() {
     .pipe(dest(config.local.appjs))
     .pipe(dest(config.js.distDir));
 }
+
+// Build Scripts Task
+const buildScripts = (mode) => (done) => {
+  let streamMode;
+  if (mode === 'development') streamMode = require('./webpack/config.development.js');
+  else if (mode === 'production') streamMode = require('./webpack/config.production.js');
+  else streamMode = undefined;
+
+  ['development', 'production'].includes(mode) ? pump([
+    gulp.src(srcPath('js')),
+    vinylNamed(),
+    webpackStream(streamMode, webpack),
+    gulpSourcemaps.init({ loadMaps: true }),
+    through2.obj(function (file, enc, cb) {
+      const isSourceMap = /\.map$/.test(file.path);
+      if (!isSourceMap) this.push(file);
+      cb();
+    }),
+    gulpBabel({ presets: [['env', babelConfig]] }),
+    ...((mode === 'production') ? [gulpUglify()] : []),
+    gulpSourcemaps.write('./'),
+    gulp.dest(distPath('js')),
+    browserSync.stream(),
+  ], done) : undefined;
+};
 
 
 /*
