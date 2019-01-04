@@ -1,6 +1,8 @@
 
-const { series, parallel, src, dest, watch } = require('gulp');
-const sass  = require('gulp-sass');
+const { series, parallel, src, dest, watch, task } = require('gulp');
+
+const args = require('yargs').argv;
+const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const rename = require("gulp-rename");
 const discardcomments = require('postcss-discard-comments');
@@ -19,102 +21,13 @@ const webpackStream = require('webpack-stream');
 const browserSync = require('browser-sync').create();
 const vinylNamed = require('vinyl-named');
 const through2 = require('through2');
-const gulpZip = require('gulp-zip');
+
 const gulpUglify = require('gulp-uglify');
 const postcssUncss = require('postcss-uncss');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpPostcss = require('gulp-postcss');
 const gulpBabel = require('gulp-babel');
 
-
-
-
-function build(cb) {
-  cb();
- // console.log(config.pkg.title);
-}
-
-
-let sassClean = function() {
-
-  return src([`${config.css.scssDir}/**/*`])
-    .pipe(sasslint())
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
-  
-}
-
-
-let sassCompile = function() {
-  let plugins = [
-    autoprefixer({ browsers: ['last 2 version'] }),
-    discardcomments(),
-    //stylelint()
-  ];
-
-  return src([`${config.css.scssDir}/sxm.phoenix.scss`])
-  
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
-
-
-    .pipe(postcss(plugins))
-  
-    
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest(config.css.distDir));
-}
-
-let sassMinCompile = function() {
-  let plugins = [
-    autoprefixer({ browsers: ['last 2 version'] }),
-    cssnano(),
-
-  ];
-
-  return src([`${config.css.scssDir}/sxm.phoenix.scss`])
-  .pipe(sourcemaps.init())
-  .pipe(sass({ outputStyle: 'compressed' }).on('error',sass.logError))
-  .pipe(postcss(plugins))
-  .pipe(rename('sxm.phoenix.min.css'))
-  .pipe(sourcemaps.write('.'))
-  .pipe(dest(config.local.appcss))
-  .pipe(dest(config.css.distDirMin));
-}
-
-let jsCompile = function() {
-
-    return src([
-      './assets/src/js/sxm.phoenix.js',
-    ])
-    .pipe(dest(config.local.appjs))
-    .pipe(dest(config.js.distDir));
-}
-
-// Build Scripts Task
-const buildScripts = (mode) => (done) => {
-  let streamMode;
-  if (mode === 'development') streamMode = require('./webpack/config.development.js');
-  else if (mode === 'production') streamMode = require('./webpack/config.production.js');
-  else streamMode = undefined;
-
-  ['development', 'production'].includes(mode) ? pump([
-    gulp.src(srcPath('js')),
-    vinylNamed(),
-    webpackStream(streamMode, webpack),
-    gulpSourcemaps.init({ loadMaps: true }),
-    through2.obj(function (file, enc, cb) {
-      const isSourceMap = /\.map$/.test(file.path);
-      if (!isSourceMap) this.push(file);
-      cb();
-    }),
-    gulpBabel({ presets: [['env', babelConfig]] }),
-    ...((mode === 'production') ? [gulpUglify()] : []),
-    gulpSourcemaps.write('./'),
-    gulp.dest(distPath('js')),
-    browserSync.stream(),
-  ], done) : undefined;
-};
 
 
 /*
@@ -170,6 +83,36 @@ let localServe = function() {
   }));
    
 }
+
+
+/**
+ * Generic Task for all Main Gulp Build/Export Tasks
+*/
+
+// Generic Task
+const genericTask = (mode, context = 'building') => {
+  let port;
+  let modeName;
+
+  if (mode === 'development') {
+    port = '3000';
+    modeName = 'Development Mode';
+  } else if (mode === 'production') {
+    port = '8000';
+    modeName = 'Production Mode';
+  } else {
+    port = undefined;
+    modeName = undefined;
+  }
+
+  console.log(port);
+  console.log(modeName);
+  // No Side-Effects Please
+  return undefined;
+};
+
+
+
 exports.devbuild = series(
   sassClean,
   parallel(

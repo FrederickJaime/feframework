@@ -6,7 +6,9 @@
   "homepage": "http://na",
   "repository": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "dev": "gulp dev",
+    "export": "gulp export"
   },
   "babel": {
     "presets": [
@@ -48,7 +50,8 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^5.2.1",
+    "yargs": "^12.0.5"
   },
   "dependencies": {
     "normalize-scss": "^7.0.1"
