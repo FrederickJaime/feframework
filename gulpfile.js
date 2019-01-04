@@ -22,6 +22,7 @@ function build(cb) {
  // console.log(config.pkg.title);
 }
 
+
 let sassClean = function() {
 
   return src([`${config.css.scssDir}/**/*`])
@@ -30,6 +31,7 @@ let sassClean = function() {
     .pipe(sasslint.failOnError());
   
 }
+
 
 let sassCompile = function() {
   let plugins = [
