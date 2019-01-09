@@ -5,7 +5,7 @@ const config = require('../config');
 
 export function jsCompile() {
 
-  return src(`${config.js.srcDir}/main.js`)
+  return src(`${config.js.srcDir}/sxm.phoenix.js`)
   .pipe(webpack({
       mode: 'development',
       devtool: 'source-map',
