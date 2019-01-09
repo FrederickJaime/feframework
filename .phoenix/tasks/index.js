@@ -35,26 +35,13 @@ const gulpPostcss = require('gulp-postcss');
 
 
 
-function build(cb) {
-  // body omitted
-  if(isProduction) {
-    console.log('tis prod');
-  } else {
-    console.log('not prod');
-  }
-  cb();
-}
-build.description = 'Build the project';
-
-
-task(build);
 
 
 
 
 let jsClean = function() {
 
-  return src([`../${config.js.distDir}/**/*`])
+  return src([`${config.js.distDir}/**/*`])
     .pipe(gprint())
     .pipe(vinylPaths(del));
 }
