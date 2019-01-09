@@ -10,11 +10,11 @@ const ConfigOptions = function () {
 
 	config.isRelease = (gutil.env.release ? true : false);
 
-	config.srcDir = './assets/src'; // config.srcDir
-	config.distDir = './assets/dist'; // config.distDir
-	config.localDir = './app'; //files for localserver
+	config.srcDir = '../assets/src'; // config.srcDir
+	config.distDir = '../assets/dist'; // config.distDir
+	config.localDir = '../app'; //files for localserver
 
-	config.localDev = './local.dev';
+	config.localDev = '../local.dev';
   
 	
 	
