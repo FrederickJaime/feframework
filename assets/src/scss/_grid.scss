@@ -107,7 +107,6 @@
       align-items: center;
     }
 
-    
 
     &.align-right-medium-up {
       @media (min-width: #{map-get($breakpoints, medium)}) {
