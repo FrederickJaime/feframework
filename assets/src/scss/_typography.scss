@@ -163,7 +163,8 @@ p {
     line-height: map-deep-get($bodycopy-styles, large, line-height);
   }
 
-  b {
+  b,
+  strong {
     font-weight: map-deep-get($fonts-weight, $font-standard, bold);
   }
 

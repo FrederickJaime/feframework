@@ -7,6 +7,20 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-cheap-source-map',
   output: {
-    filename: '[name].js',
+    filename: 'sxm.phoenix.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            ['latest', { modules: false }],
+          ],
+        },
+      },
+    ],
   },
 };

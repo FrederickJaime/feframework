@@ -8,6 +8,21 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    filename: '[name].js',
+    filename: 'sxm.phoenix.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            ['@babel/preset-env', { modules: false }],
+          ],
+        },
+      },
+    ],
+  },
+  
 };

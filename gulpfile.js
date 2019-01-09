@@ -13,55 +13,24 @@ const cssnano = require('cssnano');
 const server = require('gulp-server-livereload');
 const sasslint = require('gulp-sass-lint');
 
+const gprint = require('gulp-print').default;
 
-const pump = require('pump');
 const del = require('del');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require('browser-sync').create();
-const vinylNamed = require('vinyl-named');
-const through2 = require('through2');
-
 const gulpUglify = require('gulp-uglify');
 const postcssUncss = require('postcss-uncss');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpPostcss = require('gulp-postcss');
-const gulpBabel = require('gulp-babel');
-
-// Entry point retreive from webpack
-const entry = require('./webpack/entry');
-
-// Transform Entry point into an Array for defining in gulp file
-const entryArray = Object.values(entry);
-// Supported Browsers
-const supportedBrowsers = [
-  'last 2 versions', // http://browserl.ist/?q=last+3+versions
-  'ie >= 11', // https://browserl.ist/?q=ie+%3E%3D+11
-  'edge >= 16', // https://browserl.ist/?q=edge+%3E%3D+16
-  'firefox >= 60', // https://browserl.ist/?q=firefox+%3E%3D+60
-  'chrome >= 68', // https://browserl.ist/?q=chrome+%3E%3D+68
-  'safari >= 10', // https://browserl.ist/?q=safari+%3E%3D+10
-  'opera >= 54', // https://browserl.ist/?q=opera+%3E%3D+54
-  'ios >= 10', // http://browserl.ist/?q=ios+%3E%3D+7
-  'android >= 4.4', // http://browserl.ist/?q=android+%3E%3D+4.4
-  'blackberry >= 10', // https://browserl.ist/?q=ios+%3E%3D+10
-  'operamobile >= 12.1', // http://browserl.ist/?q=operamobile+%3E%3D+12.1
-  'samsung >= 4', // http://browserl.ist/?q=samsung+%3E%3D+4
-];
-
-// Config
-const autoprefixConfig = { browsers: supportedBrowsers, cascade: false };
-const babelConfig = { targets: { browsers: supportedBrowsers } };
-const isProduction = args.env === 'production';
-
-// Paths for reuse
-const exportPath = './website/dist/**/*';
 
 
-// Clean Styles Task
-const cleanStyles = (mode) => () => {
-  return ['development', 'production'].includes(mode) ? del([distPath('css')]) : undefined;
-};
+
+
+
+
+
+
 
 
 
@@ -81,6 +50,52 @@ build.description = 'Build the project';
 task(build);
 
 
+
+
+let jsClean = function() {
+
+  return src([`${config.js.distDir}/**/*`])
+    .pipe(gprint())
+    .pipe(vinylPaths(del));
+}
+
+let jsCompile = function() {
+
+    return src([
+      './assets/src/js/sxm.phoenix.js',
+    ])
+    .pipe(dest(config.local.appjs))
+    .pipe(dest(config.js.distDir));
+}
+
+// Build Scripts Task
+const buildScripts = function(cb) {
+  let streamMode;
+  let mode;
+
+  if (!isProduction) {
+    mode = 'development';
+    streamMode = require('./webpack/config.development.js');
+  }
+  else if (isProduction) {
+    mode = 'prodution';
+    streamMode = require('./webpack/config.production.js');
+  }
+  else {
+    streamMode = undefined;
+  }
+
+  //return src('./assets/src/js/sxm.phoenix.js')
+  //.pipe(webpackStream(streamMode), webpack)
+  //.pipe(dest(config.js.distDir));
+  cb();
+
+  
+
+
+};
+
+
 let sassClean = function() {
 
   return src([`${config.css.scssDir}/**/*`])
@@ -89,6 +104,7 @@ let sassClean = function() {
     .pipe(sasslint.failOnError());
   
 }
+
 
 
 let sassCompile = function() {
@@ -127,41 +143,6 @@ let sassMinCompile = function() {
   .pipe(dest(config.local.appcss))
   .pipe(dest(config.css.distDirMin));
 }
-
-let jsCompile = function() {
-
-    return src([
-      './assets/src/js/sxm.phoenix.js',
-    ])
-    .pipe(dest(config.local.appjs))
-    .pipe(dest(config.js.distDir));
-}
-
-// Build Scripts Task
-const buildScripts = (mode) => (done) => {
-  let streamMode;
-  if (mode === 'development') streamMode = require('./webpack/config.development.js');
-  else if (mode === 'production') streamMode = require('./webpack/config.production.js');
-  else streamMode = undefined;
-
-  ['development', 'production'].includes(mode) ? pump([
-    gulp.src(srcPath('js')),
-    vinylNamed(),
-    webpackStream(streamMode, webpack),
-    gulpSourcemaps.init({ loadMaps: true }),
-    through2.obj(function (file, enc, cb) {
-      const isSourceMap = /\.map$/.test(file.path);
-      if (!isSourceMap) this.push(file);
-      cb();
-    }),
-    gulpBabel({ presets: [['env', babelConfig]] }),
-    ...((mode === 'production') ? [gulpUglify()] : []),
-    gulpSourcemaps.write('./'),
-    gulp.dest(distPath('js')),
-    browserSync.stream(),
-  ], done) : undefined;
-};
-
 
 /*
 * LOCAL TASK FOR GENERATING STATIC PAGES 
@@ -261,7 +242,13 @@ exports.devbuild = series(
   localServe
 
 );
-exports.build = build;
+
+exports.build = series(
+  jsClean,
+  buildScripts,
+  
+);
+
 exports.default = series(
   build,
   sassClean,
