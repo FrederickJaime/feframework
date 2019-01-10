@@ -72,10 +72,8 @@ exports.codebuild = series(
   parallel(
     sassCompile,
     sassMinCompile,
-    jsCompile,
-    localViews,
-    localImages,
   ),
+  jsCompile,
   jsCompileMin,
 );
 
