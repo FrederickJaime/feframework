@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A lightweight front-end framework for creating scalable, responsive websites",
   "scripts": {
-    "devbuild": "gulp --require babel-register --gulpfile ./.phoenix/tasks devbuild"
+    "devbuild": "gulp --require babel-register --gulpfile ./.phoenix/tasks devbuild",
+    "codebuild": "gulp --require babel-register --gulpfile ./.phoenix/tasks codebuild"
   },
   "babel": {
     "presets": [

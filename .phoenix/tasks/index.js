@@ -15,12 +15,38 @@ import { sassMinCompile } from './sasscompile.min';
   These are the tasks for local development for
   testing and/or viewing items for the framework
 */
-import { views } from './localViews';
-import { images } from './localImages';
+import { localViews } from './localViews';
+import { localImages } from './localImages';
 import { localSass } from './localSass'
 import { localJs } from './localJs';
 import { localServe } from './localServe';
 
+
+let watchfiles = function() {
+  return watch(
+    [
+      `${config.css.scssDir}/**/*`,
+      //'./assets/src/js/sxm.phoenix.js',
+      `${config.js.srcDir}/**/*`,
+  
+      `${config.local.devcss}/*.scss`,
+      `${config.local.devjs}/*.js`,
+      `${config.local.devviews}/*.html`,
+    ],
+    series(
+      sassClean,
+      parallel(
+        sassCompile,
+        sassMinCompile,
+        jsCompile,
+        localViews,
+        localImages
+      ),
+      localSass,
+      localJs
+    )
+  );        
+}
 
 
 
@@ -31,43 +57,29 @@ exports.devbuild = series(
     sassCompile,
     sassMinCompile,
     jsCompile,
-    views,
-    images,
+    localViews,
+    localImages ,
   ),
   jsCompileMin,
   localSass,
   localJs,
   localServe,
-  
+  watchfiles
 );
 
-watch(
-  [
-    `${config.css.scssDir}/**/*`,
-    './assets/src/js/sxm.phoenix.js',
-
-    `${config.local.devcss}/*.scss`,
-    `${config.local.devjs}/*.js`,
-    `${config.local.devviews}/*.html`,
-  ],
-  series(
-    sassClean,
-    parallel(
-      sassCompile,
-      sassMinCompile,
-      jsCompile,
-      views,
-      images
-    ),
-    localSass,
-    localJs
-  )
-)
-
-//export const dev   = series( server )
-//export const build = series( scripts )
+exports.codebuild = series(
+  sassClean,
+  parallel(
+    sassCompile,
+    sassMinCompile,
+    jsCompile,
+    localViews,
+    localImages,
+  ),
+  jsCompileMin,
+);
 
 
 
 
-//export default dev
+
