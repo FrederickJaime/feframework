@@ -1,6 +1,7 @@
 const { src, dest } = require('gulp');
 const compiler = require('webpack');
 const webpack = require('webpack-stream');
+const notifier = require('node-notifier');
 const config = require('../config');
 
 export function jsCompile() {
