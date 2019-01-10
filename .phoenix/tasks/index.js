@@ -39,7 +39,6 @@ exports.devbuild = series(
   localJs,
   localServe,
   
-  
 );
 
 watch(

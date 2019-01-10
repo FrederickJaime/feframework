@@ -1,3 +1,3 @@
-import testLog from './components/module'
+import testLog from './components/module';
 
-testLog()
+testLog();

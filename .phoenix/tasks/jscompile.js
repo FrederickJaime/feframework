@@ -15,7 +15,13 @@ export function jsCompile() {
       watch: false,
       module: {
         rules: [
-          { test: /\.css$/, loader: 'style!css' },
+          { test: /\.css$/, loader: 'style!css'
+          },
+          {
+            test: /\.js$/,
+            use: ['eslint-loader']
+          }
+          
         ],
       },
 
