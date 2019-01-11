@@ -63,8 +63,8 @@ exports.devbuild = series(
   jsCompileMin,
   localSass,
   localJs,
-  localServe,
-  watchfiles
+  //localServe,
+  //watchfiles
 );
 
 exports.codebuild = series(
