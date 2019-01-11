@@ -1,0 +1,48 @@
+
+// Color Palette
+// -------------
+// - Core
+// - Primary Accent
+// - Secondary Accent
+// - Links
+// - Misc
+// - <hr>
+
+// Core
+$blue-dark: #005581;
+$blue-light: #00aeef;
+$blue-medium: #0072ba;
+
+$black: #000;
+$gray-medium: #707070;
+$gray-dark: #4d4d4d;
+$gray-light: #f3f3f3;
+$white: #fff;
+
+// Primary Accent
+$green: #7ac143;
+$purple: #812990;
+
+// Secondary Accent
+$violet: #2e3192;
+$orange: #f7941d;
+$gold: #fdb913;
+
+$off-white: rgb(235, 240, 250);
+
+
+
+// Misc
+
+// Common colors
+$color-text: $black;
+$color-bg: #f1f1f1;
+$color-border: #ddd;
+
+
+
+
+
+
+// <hr> border color
+$hr-color: lighten($black, 70%);
