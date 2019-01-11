@@ -1,0 +1,14 @@
+
+@import '../../assets/src/scss/variables';
+@import '../../assets/src/scss/color-palette';
+@import '../../assets/src/scss/mixins';
+
+.navigation-logo img {
+  width: auto;
+  max-width: 220px;
+}
+
+main {
+  background: $white;
+}
+

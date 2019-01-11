@@ -7,7 +7,7 @@ assets/dist/**/*
 # - Node modules directory. comment this line to commit them.
 node_modules/*
 app/*
-local.dev/*
+
 
 
 # OS or Editor folders
