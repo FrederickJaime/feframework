@@ -16,7 +16,10 @@ I am using Yarn but you're welcome to us Npm:
 
 ### running
 Once install hopefully with no issues, you can run this command to build and launch local server:
-`yarn run devbuild` or `npm run devbuild`
+* we are currently building two options of framework MVP and nonMVP or normal build use `yarn run devbuild` or `npm run devbuild`
+if you are bulding for MVP please use `yarn run devbuild --mvp` or `npm run devbuild --mvp`
+the `--mvp` flag will building using sxm.mvp.phoenix base file instead of the sxm.phoenix base.
+
 should open browser window with http://127.0.0.1:8081/
 
 
