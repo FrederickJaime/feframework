@@ -1,16 +1,16 @@
 
-
+@import 'https://www.siriusxm.com/app-download/fonts/gotham/gotham-font.css';
 // Fonts
 // =================================
-$font-standard: 'Roboto', sans-serif;
-$font-condensed: 'Roboto Condensed', sans-serif;
+$font-standard: 'HCo Gotham', sans-serif;
+$font-condensed: 'HCo Gotham Narrow', sans-serif;
 $fonts-weight: (
   $font-standard: (
-    'thin': 100,
     'light': 300,
     'regular': 400,
-    'bold': 700,
-    'black': 900
+    'bold': 500,
+    'bolder': 700,
+    'black': 800
 	 ),
   $font-condensed: (
     'light': 300,
