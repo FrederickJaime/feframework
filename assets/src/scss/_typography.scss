@@ -4,8 +4,15 @@
 // =================================
 // variables coming from _variables.scss Headers
 
+
+
+
+// adding all headers h1-h6
+@include font-print($chap1-blocks);
+
+
 .mega-headline {
-  font-weight: map-deep-get($fonts-weight, $font-standard, thin);
+  
   @include font-size(map-deep-get($header-styles, small, mega, font-size));
   line-height: map-deep-get($header-styles, small, mega, line-height);
 
@@ -22,7 +29,7 @@
 
 h1,
 .h1 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, light);
+  font-weight: map-deep-get($fonts-weight, $font-standard, 'black');
   @include font-size(map-deep-get($header-styles, small, h1, font-size));
   line-height: map-deep-get($header-styles, small, h1, line-height);
 

@@ -95,6 +95,55 @@
 
 }
 
+
+// Font Declaration 
+// =================================
+// useage:
+// @include bp(medium) { @content }
+@mixin font-print( $map ) {
+  @each $font-declared in $map {
+    $breakpoint:  nth($font-declared, 1);  //5
+    $headers: nth($font-declared, 2);
+
+      @if $breakpoint != small {
+        @include bp($breakpoint){
+          @each $x in $headers{
+            $header:      nth($x, 1);
+            $fontsize:      nth($x, 3);
+            $lineheight:   nth($x, 2);
+            $letterspacing:   nth($x, 4);
+            $fontweight: nth($x, 5);
+  
+            .#{$header},
+            #{$header} {
+                @include font-size($fontsize);
+                line-height: $lineheight;
+                letter-spacing: $letterspacing;
+                font-weight: map-deep-get($fonts-weight, $font-standard, $fontweight);
+            }
+          }
+        }
+      } @else {
+        @each $x in $headers{
+          $header:      nth($x, 1);
+          $fontsize:      nth($x, 3);
+          $lineheight:   nth($x, 2);
+          $letterspacing:   nth($x, 4);
+          $fontweight: nth($x, 5);
+
+          .#{$header},
+          #{$header} {
+              @include font-size($fontsize);
+              line-height: $lineheight;
+              letter-spacing: $letterspacing;
+              font-weight: map-deep-get($fonts-weight, $font-standard, $fontweight);
+          }
+        }
+      }
+  } 
+}
+
+
 // Clearfix
 @mixin clearfix {
   &::after {

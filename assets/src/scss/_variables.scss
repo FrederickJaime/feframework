@@ -7,17 +7,18 @@ $font-condensed: 'HCo Gotham Narrow', sans-serif;
 $fonts-weight: (
   $font-standard: (
     'light': 300,
-    'regular': 400,
-    'bold': 500,
-    'bolder': 700,
+    'book': 400,
+    'medium': 500,
+    'bold': 700,
     'black': 800
 	 ),
   $font-condensed: (
-    'light': 300,
-    'regular': 400,
-    'bold': 700,
+    'book': 400,
+    'medium': 500,
+    'black': 800,
 	 )
  );
+
 
 
 // Header copy config
@@ -26,6 +27,27 @@ $fonts-weight: (
 $header-lineheight: 1;
 $header-margin-top: 0;
 $header-margin-bottom: 0;
+
+
+$chap1-blocks:(
+  small (
+    // header | font-size | line-height | letter-spacing 
+    (h1, -130, 80px, 0, 'black'),
+    (h2, 10, -30px, 0, 'black'),
+    (h3, -90, 50px,0, 'black')
+    ),
+  medium (
+    (h1, -130, 80px,0, 'black'),
+    (h2, 10, -30px,0, 'black'),
+    (h3, -90, 50px,0, 'black')
+    ),
+  large (
+    (h1, -130, 80px,0, 'black'),
+    (h2, 10, -30px,0, 'black'),
+    (h3, -90, 50px,0, 'black')
+    )
+);
+
 $header-styles: (
   'small': (
     'mega': ('font-size': 40px, 'line-height': 1.15, 'letter-spacing': 0),
