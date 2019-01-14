@@ -1,5 +1,5 @@
 import testLog from './components/module';
-import { cube, droppane } from './components/droppane';
+import { droppane } from './components/droppane';
 
 testLog();
 droppane();

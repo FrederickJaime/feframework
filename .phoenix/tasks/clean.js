@@ -10,7 +10,7 @@ export function jsClean() {
     `${config.js.distDir}/unminified/`,
     `${config.js.distDir}/minified/`,
     `${config.local.appjs}`
-  ])
+  ],{read: false})
   .pipe(clean({force: true}));
 
 }

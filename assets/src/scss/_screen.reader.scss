@@ -1,0 +1,10 @@
+
+[aria-hidden='true'] {
+  display: none;
+  visibility: hidden;
+}
+
+[aria-hidden='false'] {
+  display: block;
+  visibility: visible;
+}

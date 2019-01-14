@@ -35,7 +35,7 @@ let watchfiles = function() {
     ],
     series(
       parallel(
-        jsClean,
+      //  jsClean,
         sassClean
       ),
       parallel(
@@ -57,7 +57,7 @@ let watchfiles = function() {
 
 exports.devbuild = series(
   parallel(
-    jsClean,
+  //  jsClean,
     sassClean
   ),
   parallel(
