@@ -1,3 +1,3 @@
 export default function () {
-  console.log('I imported!');
+  console.log('I imported! new');
 }

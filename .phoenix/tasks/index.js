@@ -2,7 +2,7 @@
 const { series, parallel, watch } = require('gulp');
 const config = require('../config');
 
-
+import { jsClean } from './clean';
 import { jsCompile } from './jscompile';
 import { jsCompileMin } from './jscompile.min';
 import { sassClean } from './sassclean';
@@ -34,7 +34,10 @@ let watchfiles = function() {
       `${config.local.devviews}/*.html`,
     ],
     series(
-      sassClean,
+      parallel(
+        jsClean,
+        sassClean
+      ),
       parallel(
         sassCompile,
         sassMinCompile,
@@ -42,6 +45,7 @@ let watchfiles = function() {
         localViews,
         localImages
       ),
+      jsCompileMin,
       localSass,
       localJs
     )
@@ -52,7 +56,10 @@ let watchfiles = function() {
 
 
 exports.devbuild = series(
-  sassClean,
+  parallel(
+    jsClean,
+    sassClean
+  ),
   parallel(
     sassCompile,
     sassMinCompile,
@@ -68,7 +75,10 @@ exports.devbuild = series(
 );
 
 exports.codebuild = series(
-  sassClean,
+  parallel(
+    jsClean,
+    sassClean
+  ),
   parallel(
     sassCompile,
     sassMinCompile,
