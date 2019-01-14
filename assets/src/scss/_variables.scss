@@ -27,55 +27,31 @@ $fonts-weight: (
 $header-lineheight: 1;
 $header-margin-top: 0;
 $header-margin-bottom: 0;
-
-
-$chap1-blocks:(
+$header-styles: (
   small (
-    // header | font-size | line-height | letter-spacing 
-    (h1, -130, 80px, 0, 'black'),
-    (h2, 10, -30px, 0, 'black'),
-    (h3, -90, 50px,0, 'black')
+    h1: (font-size: 40px, line-height: 1.02, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h2: (font-size: 32px, line-height: 1.25, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h3: (font-size: 24px, line-height: 1.25, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h4: (font-size: 20px, line-height: 1.4, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h5: (font-size: 18px, line-height: 1.44, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h6: (font-size: 15px, line-height: 1.53, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
     ),
   medium (
-    (h1, -130, 80px,0, 'black'),
-    (h2, 10, -30px,0, 'black'),
-    (h3, -90, 50px,0, 'black')
+    h1: (font-size: 48px, line-height: 1.04, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h2: (font-size: 40px, line-height: 1.05, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h3: (font-size: 28px, line-height: 1.21, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h4: (font-size: 24px, line-height: 1.33, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h5: (font-size: 20px, line-height: 1.4, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h6: (font-size: 16px, line-height: 1.5, letter-spacing: 0, font-weight: calculate-font-weight('bold'))
     ),
   large (
-    (h1, -130, 80px,0, 'black'),
-    (h2, 10, -30px,0, 'black'),
-    (h3, -90, 50px,0, 'black')
+    h1: (font-size: 70px, line-height: 1.02, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h2: (font-size: 48px, line-height: 1.04, letter-spacing: 0, font-weight: calculate-font-weight('black')),
+    h3: (font-size: 28px, line-height: 1.21, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h4: (font-size: 24px, line-height: 1.33, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h5: (font-size: 20px, line-height: 1.4, letter-spacing: 0, font-weight: calculate-font-weight('bold')),
+    h6: (font-size: 16px, line-height: 1.5, letter-spacing: 0, font-weight: calculate-font-weight('bold'))
     )
-);
-
-$header-styles: (
-  'small': (
-    'mega': ('font-size': 40px, 'line-height': 1.15, 'letter-spacing': 0),
-    'h1': ('font-size': 24px, 'line-height': 1.33, 'letter-spacing': 0),
-    'h2': ('font-size': 24px, 'line-height': 1.33, 'letter-spacing': 0),
-    'h3': ('font-size': 18px, 'line-height': 1.33, 'letter-spacing': 0),
-    'h4': ('font-size': 16px, 'line-height': 1.5, 'letter-spacing': 0),
-    'h5': ('font-size': 14px, 'line-height': 1.57, 'letter-spacing': 0),
-    'h6': ('font-size': 14px, 'line-height': 1.57, 'letter-spacing': 0)
-  ),
-  'medium': (
-    'mega': ('font-size': 48px, 'line-height': 1.25, 'letter-spacing': 0),
-    'h1': ('font-size': 42px, 'line-height': 1.14, 'letter-spacing': 0),
-    'h2': ('font-size': 30px, 'line-height': 1.26, 'letter-spacing': 0),
-    'h3': ('font-size': 23px, 'line-height': 1.34, 'letter-spacing': 0),
-    'h4': ('font-size': 19px, 'line-height': 1.42, 'letter-spacing': 0),
-    'h5': ('font-size': 16px, 'line-height': 1.5, 'letter-spacing': 0),
-    'h6': ('font-size': 14px, 'line-height': 1.57, 'letter-spacing': 0)
-	),
-  'large': (
-    'mega': ('font-size': 64px, 'line-height': 1.09, 'letter-spacing': 0),
-    'h1': ('font-size': 48px, 'line-height': 1.125, 'letter-spacing': 0),
-    'h2': ('font-size': 36px, 'line-height': 1.16, 'letter-spacing': 0),
-    'h3': ('font-size': 24px, 'line-height': 1.33, 'letter-spacing': 0),
-    'h4': ('font-size': 20px, 'line-height': 1.4, 'letter-spacing': 0),
-    'h5': ('font-size': 17px, 'line-height': 1.47, 'letter-spacing': 0),
-    'h6': ('font-size': 14px, 'line-height': 1.57, 'letter-spacing': 0)
-	)
 );
 
 // Body copy config

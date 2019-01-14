@@ -3,135 +3,12 @@
 // Headers 
 // =================================
 // variables coming from _variables.scss Headers
-
-
+// Define the Sassy Map called $icons
 
 
 // adding all headers h1-h6
-@include font-print($chap1-blocks);
-
-
-.mega-headline {
-  
-  @include font-size(map-deep-get($header-styles, small, mega, font-size));
-  line-height: map-deep-get($header-styles, small, mega, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, mega, font-size));
-    line-height: map-deep-get($header-styles, medium, mega, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, mega, font-size));
-    line-height: map-deep-get($header-styles, large, mega, line-height);
-  }
-}
-
-h1,
-.h1 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, 'black');
-  @include font-size(map-deep-get($header-styles, small, h1, font-size));
-  line-height: map-deep-get($header-styles, small, h1, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h1, font-size));
-    font-weight: map-deep-get($fonts-weight, $font-standard, thin);
-    line-height: map-deep-get($header-styles, medium, h1, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h1, font-size));
-    line-height: map-deep-get($header-styles, large, h1, line-height);
-  }
-
-}
-
-h2,
-.h2 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, light);
-  @include font-size(map-deep-get($header-styles, small, h2, font-size));
-  line-height: map-deep-get($header-styles, small, h2, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h2, font-size));
-    font-weight: map-deep-get($fonts-weight, $font-standard, thin);
-    line-height: map-deep-get($header-styles, medium, h2, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h2, font-size));
-    line-height: map-deep-get($header-styles, large, h2, line-height);
-  }
-
-}
-
-h3,
-.h3 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
-  @include font-size(map-deep-get($header-styles, small, h3, font-size));
-  line-height: map-deep-get($header-styles, small, h3, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h3, font-size));
-    line-height: map-deep-get($header-styles, medium, h3, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h3, font-size));
-    line-height: map-deep-get($header-styles, large, h3, line-height);
-  }
-}
-
-h4,
-.h4 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, regular);
-  @include font-size(map-deep-get($header-styles, small, h4, font-size));
-  line-height: map-deep-get($header-styles, small, h4, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h4, font-size));
-    line-height: map-deep-get($header-styles, medium, h4, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h4, font-size));
-    line-height: map-deep-get($header-styles, large, h4, line-height);
-  }
-}
-
-h5,
-.h5 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, bold);
-  @include font-size(map-deep-get($header-styles, small, h5, font-size));
-  line-height: map-deep-get($header-styles, small, h5, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h5, font-size));
-    line-height: map-deep-get($header-styles, medium, h5, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h5, font-size));
-    line-height: map-deep-get($header-styles, large, h5, line-height);
-  }
-}
-
-h6,
-.h6 {
-  font-weight: map-deep-get($fonts-weight, $font-standard, regular);
-  @include font-size(map-deep-get($header-styles, small, h6, font-size));
-  line-height: map-deep-get($header-styles, small, h6, line-height);
-
-  @include bp(medium) {
-    @include font-size(map-deep-get($header-styles, medium, h6, font-size));
-    line-height: map-deep-get($header-styles, medium, h6, line-height);
-  }
-
-  @include bp(large) {
-    @include font-size(map-deep-get($header-styles, large, h6, font-size));
-    line-height: map-deep-get($header-styles, large, h6, line-height);
-  }
-}
+//@include font-print($chap1-blocks);
+@include font-print($header-styles);
 
 h1,
 h2,
@@ -149,9 +26,8 @@ h6,
   margin-bottom: $header-margin-bottom;
   margin-top: $header-margin-top;
 
-
   b {
-    font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+    font-weight: calculate-font-weight('bold');
   }
 
 }
