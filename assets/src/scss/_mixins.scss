@@ -103,11 +103,31 @@
 @mixin font-print($map) {
   // loops $map provided in mixing
   @each $font-declared in $map {
-
+    //putting group key into variable [small, medium, large]
     $breakpoint:  nth($font-declared, 1);
+    //putting object into a variable in order to loop.
     $head-object: nth($font-declared, 2);
+    //adding logic to render header styles in breakpoint
+    @if $breakpoint != small {
 
-    @include bp(#{$breakpoint}) {
+      @include bp(#{$breakpoint}) {
+
+        @each $head in $head-object {
+
+          $tag: nth($head, 1);
+          $tag-map: nth($head, 2);
+
+          .#{$tag} {
+
+            @each $key, $value in $tag-map {
+              #{$key}: #{$value};
+            }
+
+          }
+        }
+      }
+      // logic to render without breakpoint
+    } @else {
 
       @each $head in $head-object {
 
@@ -122,7 +142,10 @@
 
         }
       }
+
     }
+
+
   }
 }
 
