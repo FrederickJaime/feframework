@@ -3,13 +3,16 @@ function droppane() {
   let dropdowns = document.querySelectorAll('a[data-dropdown],button[data-dropdown]');
 
   let dropdownHandler = function (el) {
-    let trigger = `#${el.getAttribute('data-toggle')}`;
-    let ariaExpanded = el.getAttribute('aria-expanded');
+    let dropdownTrigger = `#${el.getAttribute('data-toggle')}`;
+    let dropdownExpanded = el.getAttribute('aria-expanded');
+    let dropdownPanel = document.querySelector(dropdownTrigger);
 
-    if (ariaExpanded === 'false') {
+    if (dropdownExpanded === 'false') {
       el.setAttribute('aria-expanded', 'true');
+      dropdownPanel.setAttribute('aria-hidden', 'false');
     } else {
       el.setAttribute('aria-expanded', 'false');
+      dropdownPanel.setAttribute('aria-hidden', 'true');
     }
   };
 
