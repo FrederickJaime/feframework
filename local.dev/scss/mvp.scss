@@ -8,6 +8,22 @@
   max-width: 220px;
 }
 
+.topbar {
+
+  &-dropdowns {
+    padding: 35px 20px;
+
+    a:not(.button) {
+      @include font-size(12px);
+    }
+
+    &--account {
+      width: 50%;
+    }
+  }
+
+}
+
 main {
   background: $white;
 }
