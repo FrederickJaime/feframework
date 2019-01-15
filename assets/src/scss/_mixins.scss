@@ -117,6 +117,7 @@
           $tag: nth($head, 1);
           $tag-map: nth($head, 2);
 
+          #{$tag},
           .#{$tag} {
 
             @each $key, $value in $tag-map {
@@ -134,6 +135,7 @@
         $tag: nth($head, 1);
         $tag-map: nth($head, 2);
 
+        #{$tag},
         .#{$tag} {
 
           @each $key, $value in $tag-map {
