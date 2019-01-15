@@ -18,9 +18,22 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0 map-deep-get($gridconfig, 'medium', 'padding');
+  padding: 0 map-deep-get($gridconfig, 'xsmall', 'row-padding');
   position: relative;
   width: 100%;
+
+  @include bp(small) {
+    padding: 0 map-deep-get($gridconfig, 'small', 'row-padding');
+  }
+
+  @include bp(medium) {
+    padding: 0 map-deep-get($gridconfig, 'medium', 'row-padding');
+  }
+
+  @include bp(large) {
+    padding: 0 map-deep-get($gridconfig, 'large', 'row-padding');
+  }
+
 
   &.align-left {
     justify-content: flex-start;
@@ -84,11 +97,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 map-deep-get($gridconfig, 'small', 'padding');
+    padding: 0 map-deep-get($gridconfig, 'small', 'col-padding');
     position: relative;
 
     @include bp(medium) {
-      padding: 0 map-deep-get($gridconfig, 'medium', 'padding');
+      padding: 0 map-deep-get($gridconfig, 'medium', 'col-padding');
     }
 
     &.no-padding {

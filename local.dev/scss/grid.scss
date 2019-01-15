@@ -6,7 +6,7 @@
   display: block;
   width: 100%;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1336px;
 
 
   .row.header .column{
@@ -86,6 +86,9 @@
 
     .row {
       margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     
     .row .column {

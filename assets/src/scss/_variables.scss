@@ -78,7 +78,7 @@ $breakpoints: (
 
 // Setup layout max-width
 $layout-margin: 0;
-$layout-max-width: 1248px;
+$layout-max-width: 1336px;
 $layout-min-width: 320px;
 
 
@@ -88,14 +88,21 @@ $layout-min-width: 320px;
 // Columns config
 //  ================================= 
 $gridconfig: (
+  'xsmall': (
+    'row-padding': 4px,
+    'col-padding': 12px
+	),
   'small': (
-    'padding': 12px
+    'row-padding': 6px,
+    'col-padding': 12px
 	),
   'medium': (
-    'padding': 12px
+    'row-padding': 6px,
+    'col-padding': 12px
 	),
   'large': (
-    'padding': 12px
+    'row-padding': 6px,
+    'col-padding': 12px
   ),
 );
 

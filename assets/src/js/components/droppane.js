@@ -8,11 +8,12 @@ function droppane() {
     let edge = closestEdge(event, el);
     console.log(el.getAttribute('data-dropdown'));
     let dropdownExpanded = el.getAttribute('aria-expanded');
-    let dropdownPosition = el.getAttribute('data-pane-position');
-
+    let dropdownPosition = el.getAttribute('data-pane-position').split(',');
+    console.log(dropdownPosition[0]);
+    
+    
     panel.style.top = `${el.getBoundingClientRect().bottom}px`;
     panel.style.right = '0px';
-
 
     if (dropdownExpanded === 'false') {
       el.setAttribute('aria-expanded', 'true');

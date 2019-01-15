@@ -88,17 +88,23 @@ $layout-min-width: 320px;
 // Columns config
 //  ================================= 
 $gridconfig: (
+  'xsmall': (
+    'row-padding': 4px,
+    'col-padding': 12px
+	),
   'small': (
-    'padding': 12px
+    'row-padding': 6px,
+    'col-padding': 12px
 	),
   'medium': (
-    'padding': 12px
+    'row-padding': 24px,
+    'col-padding': 12px
 	),
   'large': (
-    'padding': 12px
+    'row-padding': 44px,
+    'col-padding': 12px
   ),
 );
-
 
 $columns: (
   1: 08.333333333%,
