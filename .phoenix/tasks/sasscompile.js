@@ -20,7 +20,6 @@ export function sassCompile() {
   ];
   let frameworkBuild = isMVP ? `${config.css.scssDir}/sxm.mvp.phoenix.scss` : `${config.css.scssDir}/sxm.phoenix.scss`;
 
-
   return src(frameworkBuild)
   
   .pipe(sourcemaps.init())

@@ -2,12 +2,13 @@ const { src, dest } = require('gulp');
 const named = require('vinyl-named');
 const compiler = require('webpack');
 const webpack = require('webpack-stream');
+const argv = require('yargs').argv;
 const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
 export function localJs() {
   let frameworkBuild = isMVP ? `${config.local.devjs}/mvp/*.js` : `${config.local.devjs}/phoenix/*.js`;
-  let frameworkBuildDist = isMVP ? `${config.local.appjs}/mvp/js/` : `${cconfig.local.appjs}/phoenix/js/`;
+  let frameworkBuildDist = isMVP ? `${config.local.appjs}/mvp/js/` : `${config.local.appjs}/phoenix/js/`;
 
   return src(frameworkBuild)
   .pipe(named())

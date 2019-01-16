@@ -5,6 +5,7 @@ const rename = require("gulp-rename");
 const discardcomments = require('postcss-discard-comments');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
+const argv = require('yargs').argv;
 const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 

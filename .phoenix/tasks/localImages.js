@@ -1,4 +1,5 @@
 const { src, dest } = require('gulp');
+const argv = require('yargs').argv;
 const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
