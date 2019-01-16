@@ -1,10 +1,12 @@
 const { src, dest } = require('gulp');
 const server = require('gulp-server-livereload');
+const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
 export function localServe() {
+  let frameworkBuild = isMVP ? `${config.localDir}/mvp/` : `${config.localDir}/phoenix/`;
 
-  return src(config.localDir)
+  return src(frameworkBuild)
   .pipe(server({
     host: '127.0.0.1',
     livereload: true,
