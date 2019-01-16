@@ -5,6 +5,7 @@ const rename = require("gulp-rename");
 const discardcomments = require('postcss-discard-comments');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
+const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
 
@@ -14,13 +15,16 @@ export function localSass() {
     discardcomments()
   ];
 
-  return src([`${config.local.devcss}/*.scss`])
+  let frameworkBuild = isMVP ? `${config.local.devcss}/mvp/*.scss` : `${config.local.devcss}/phoenix/*.scss`;
+  let frameworkBuildDist = isMVP ? `${config.local.appcss}/mvp/css/` : `${config.local.appcss}/phoenix/css/`;
+
+  return src(frameworkBuild)
 
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error',sass.logError))
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest(`${config.local.appcss}`));
+    .pipe(dest(frameworkBuildDist));
   
 }
 

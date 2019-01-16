@@ -1,8 +1,12 @@
 const { src, dest } = require('gulp');
+const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
 export function localImages() {
-  return src([`${config.local.devimg}/*`])
-  .pipe(dest(`${config.local.appimg}`));
+  let frameworkBuild = isMVP ? `${config.local.devimg}/mvp/*` : `${config.local.devimg}/phoenix/*`;
+  let frameworkBuildDist = isMVP ? `${config.local.appimg}/mvp/images/` : `${config.local.appimg}/phoenix/images/`;
+
+  return src(frameworkBuild )
+  .pipe(dest(frameworkBuildDist));
   
 }

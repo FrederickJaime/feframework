@@ -36,9 +36,9 @@ const ConfigOptions = function () {
     devviews : static pages
   */
 	config.local = {
-		appcss: `${config.localDir}/css`,
-		appjs: `${config.localDir}/js`,
-		appimg: `${config.localDir}/images`,
+		appcss: `${config.localDir}`,
+		appjs: `${config.localDir}`,
+		appimg: `${config.localDir}`,
 
 		devcss: `${config.localDev}/scss`,
 		devjs: `${config.localDev}/js`,
