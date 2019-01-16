@@ -104,6 +104,8 @@
       padding: 0 map-deep-get($gridconfig, 'medium', 'col-padding');
     }
 
+
+
     &.no-padding {
       padding: 0;
     }
@@ -140,6 +142,37 @@
     }
 
 
+    &.offset-small {
+      @include item-list-offset($columns, false, margin-left);
+    }
+
+    &.offset-medium {
+      @include bp(medium) {
+        @include item-list-offset($columns, false, margin-left);
+      }
+    }
+
+    &.offset-large {
+      @include bp(large) {
+        @include item-list-offset($columns, false, margin-left);
+      }
+    }
+
+    &.padding-small {
+      @include item-list-padding($columns, false);
+    }
+
+    &.padding-medium {
+      @include bp(medium) {
+        @include item-list-padding($columns, false);
+      }
+    }
+
+    &.padding-large {
+      @include bp(large) {
+        @include item-list-padding($columns, false);
+      }
+    }
 
     &.small {
       @include item-list($columns, false, width);

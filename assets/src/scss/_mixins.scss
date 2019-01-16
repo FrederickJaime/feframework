@@ -161,6 +161,83 @@
   @return map-deep-get($fonts-weight, $font, $weight);
 }
 
+
+
+@mixin item-list-offset($map, $index: false, $prop: 'none') {
+
+  @each $item-name, $item in $map {
+
+    @if not map-has-key($map, $item-name) {
+
+      @warn ''#{$item-name}' is not a valid icon name';
+
+    } @else {
+
+      @if $prop == 'none' {
+        @warn 'property option not included, please add property';
+      } @else {
+
+        @if $index == false {
+
+          &-#{$item-name} {
+            #{$prop}: calc(#{$item} + (12px+(#{index($map, $item-name $item)}*0px)));
+          }
+
+        } @else {
+
+          &-#{index($map, $item-name $item)} {
+            #{$prop}: $item;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+@mixin item-list-padding($map, $index: false) {
+
+  @each $item-name, $item in $map {
+
+    @if not map-has-key($map, $item-name) {
+
+      @warn ''#{$item-name}' is not a valid icon name';
+
+    } @else {
+
+
+
+      @if $index == false {
+
+        &-#{$item-name} {
+          padding-left: $item;
+          padding-right: $item;
+        }
+
+      } @else {
+
+        &-#{index($map, $item-name $item)} {
+          padding-left: $item;
+          padding-right: $item;
+        }
+
+      }
+
+      
+
+    }
+
+  }
+
+}
+
+
 // Clearfix
 @mixin clearfix {
   &::after {

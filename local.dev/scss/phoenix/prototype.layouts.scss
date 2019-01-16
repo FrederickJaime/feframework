@@ -1,0 +1,86 @@
+@import '../../../assets/src/scss/variables';
+@import '../../../assets/src/scss/color-palette';
+@import '../../../assets/src/scss/mixins';
+
+
+.light-bg {
+  background: #fff;
+}
+
+.light-blue-bg {
+  background: #EBF0FA;
+}
+
+.dark-bg {
+  background: #D6D6D6;
+}
+
+.header {
+  background: #EBF0FA;
+  display: block;
+
+
+  padding: 128px 0 96px;
+
+
+  &-secondary {
+    
+    display: block;
+    .row .column {
+      padding-top: 128px;
+      padding-bottom: 96px;
+    }
+  }
+
+}
+
+.content-container {
+  position: relative;
+  display: block;
+  max-width: $layout-max-width;
+  margin:0 auto;
+}
+
+section {
+  background: #EBF0FA;
+  margin-top: 192px;
+  margin-top: 192px;
+
+
+
+  .cards-holder {
+
+    .column:nth-child(odd) .cards-holder-single {
+      background: #EBF0FA;
+    }
+
+    .column:nth-child(even) .cards-holder-single {
+      background: #D6D6D6;
+    }
+
+    .cards-holder-single {
+      height: 480px;
+      width: 100%;
+
+      &-copy .title {
+        margin-bottom: 0;
+      }
+  
+    }
+
+  }
+
+  .card-block-holder {
+    .card-block {
+      padding-top: 96px;
+      padding-bottom: 96px;
+
+      .small-copy {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+}
+
