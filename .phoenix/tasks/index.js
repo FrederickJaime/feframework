@@ -1,5 +1,7 @@
 
 const { series, parallel, watch } = require('gulp');
+const argv = require('yargs').argv;
+const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
 import { jsClean } from './clean';
@@ -23,15 +25,19 @@ import { localServe } from './localServe';
 
 
 let watchfiles = function() {
+
+  let localScssWatch = isMVP ? `${config.local.devcss}/mvp/*.scss` : `${config.local.devcss}/phoenix/*.scss`;
+  let localJsWatch = isMVP ? `${config.local.devjs}/mvp/*.js` : `${config.local.devcss}/phoenix/*.js`;
+  let localViewsWatch = isMVP ? `${config.local.devviews}/mvp/*.html` : `${config.local.devviews}/phoenix/*.html`;
+
   return watch(
     [
       `${config.css.scssDir}/**/*`,
-      //'./assets/src/js/sxm.phoenix.js',
       `${config.js.srcDir}/**/*`,
   
-      `${config.local.devcss}/*.scss`,
-      `${config.local.devjs}/*.js`,
-      `${config.local.devviews}/*.html`,
+      localScssWatch,
+      localJsWatch,
+      localViewsWatch,
     ],
     series(
       parallel(

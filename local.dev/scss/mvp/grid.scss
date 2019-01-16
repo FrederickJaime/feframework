@@ -7,7 +7,10 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1336px;
-
+  
+  .leading-copy {
+    min-height: 100vh;
+  }
 
   .row.header .column{
     margin: 10px 0;
