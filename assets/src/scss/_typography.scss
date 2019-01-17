@@ -35,7 +35,10 @@ h6,
 h1,
 .h1 {
 
+  margin: 0 0 24px;
+
   &.alt {
+    font-family: $font-alt;
     font-weight: calculate-font-weight('black', $font-alt);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -50,11 +53,8 @@ h6,
     text-transform: uppercase;
   }
 }
+
 // =================================
-h1,
-.h1 {
-  margin: 0 0 24px;
-}
 
 h2,
 .h2 {
