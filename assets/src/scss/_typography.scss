@@ -32,29 +32,37 @@ h6,
 
 }
 
+h6,
+.h6 {
+  &.alt {
+    font-weight: calculate-font-weight('black');
+    letter-spacing: 12px;
+  }
+}
+
 // Bodycopy
 // =================================
 // variables coming from _variables.scss
+@include font-print($bodycopy-styles);
+
 p {
-  @include font-size(map-deep-get($bodycopy-styles, small, font-size));
-  font-weight: map-deep-get($fonts-weight, $font-standard, light);
-  line-height: map-deep-get($bodycopy-styles, small, line-height);
-  margin: 24px 0;
-
-  @include bp(large) {
-    @include font-size(map-deep-get($bodycopy-styles, large, font-size));
-    line-height: map-deep-get($bodycopy-styles, large, line-height);
+  &.small-copy {
+    @include font-size(14px);
+    line-height: 1.57;
   }
 
-  b,
-  strong {
-    font-weight: map-deep-get($fonts-weight, $font-standard, bold);
+  &.xsmall-copy {
+    @include font-size(14px);
+    line-height: 1.57;
   }
-
 }
 
 .small-copy {
-  @include font-size(map-deep-get($bodycopy-styles, xsmall, font-size));
-  line-height: map-deep-get($bodycopy-styles, xsmall, line-height);
-  color: $gray-medium;
+  @include font-size(14px);
+  line-height: 1.57;
+}
+
+.xsmall-copy {
+  @include font-size(12px);
+  line-height: 1.5;
 }

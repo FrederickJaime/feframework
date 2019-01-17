@@ -58,10 +58,14 @@ $header-styles: (
 // =================================
 // variables applied to _topography.scss
 $bodycopy-styles: (
-  'xsmall': ('font-size': 12px, 'line-height': 1.66, 'letter-spacing': 0),
-  'small': ('font-size': 15px, 'line-height': 1.53, 'letter-spacing': 0),
-  'large': ('font-size': 16px, 'line-height': 1.5, 'letter-spacing': 0)
+  small (
+    p: (font-size: 15px, line-height: 1.53, letter-spacing: 0, font-weight: calculate-font-weight('book'))
+  ),
+  medium (
+    p: (font-size: 16px, line-height: 1.5, letter-spacing: 0, font-weight: calculate-font-weight('book'))
+  )
 );
+
 
 // Breakpoints
 // =================================
