@@ -40,8 +40,11 @@ h1,
   &.alt {
     font-family: $font-alt;
     font-weight: calculate-font-weight('black', $font-alt);
-    letter-spacing: 2px;
     text-transform: uppercase;
+
+    @include bp(large) {
+      letter-spacing: 2px;
+    }
   }
 }
 

@@ -4,6 +4,7 @@ const argv = require('yargs').argv;
 const isMVP = (argv.mvp === undefined) ? false : true;
 const config = require('../config');
 
+import { phoenixFonts } from './fonts';
 import { jsClean } from './clean';
 import { jsCompile } from './jscompile';
 import { jsCompileMin } from './jscompile.min';
@@ -64,7 +65,8 @@ let watchfiles = function() {
 exports.devbuild = series(
   parallel(
   //  jsClean,
-    sassClean
+    sassClean,
+    phoenixFonts
   ),
   parallel(
     sassCompile,
