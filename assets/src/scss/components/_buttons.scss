@@ -22,13 +22,14 @@ button {
 
 .button {
   background: $blue-medium;
-  border-radius: 6px;
   color: $white;
   cursor: pointer;
   display: block;
-  @include font-size(16px);
+  @include font-size(14px);
   font-weight: map-deep-get($fonts-weight, $font-standard, bold);
-  line-height: 1.375;
+  letter-spacing: 2px;
+  margin-top: 32px;
+  line-height: 1.42;
   padding: 17px 0;
   position: relative;
   transition: background .1s ease-in-out, color .1s ease-in-out;
@@ -38,6 +39,7 @@ button {
 
   &:hover {
     background: $blue-dark;
+    text-decoration: none;
   }
 
   &.dark {

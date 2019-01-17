@@ -62,9 +62,7 @@ section {
       height: 480px;
       width: 100%;
 
-      &-copy .title {
-        margin-bottom: 0;
-      }
+
   
     }
 
@@ -75,12 +73,15 @@ section {
       padding-top: 96px;
       padding-bottom: 96px;
 
-      .small-copy {
-        margin-bottom: 0;
+      .xsmall-copy {
+        margin-top: 0;
       }
     }
   }
 
-
+  .alt-title {
+    margin-bottom: 40px;
+  }
+  
 }
 
