@@ -7,7 +7,9 @@ export function phoenixFonts(cb) {
 
   if (!isMVP) {
 
-    return src(frameworkBuild)
+    return src([
+      `${config.fonts.gtamerica}`
+    ])
     .pipe(dest(`${config.css.distDirMin}/fonts`))
     .pipe(dest(`${config.css.distDir}/fonts`))
     .pipe(dest(`${config.localDir}/phoenix/css/fonts`));

@@ -46,8 +46,14 @@ const ConfigOptions = function () {
 		devviews: `${config.localDev}/views`
 	}
   
-  
-
+  /*
+   Framework fonts directories
+   ===================================
+   Fonts should be added within directories
+  */
+  config.fonts = {
+    gtamerica: `${config.srcDir}/fonts/gtamerica/*`,
+  };
   /*
    Framework Scss/css directories
    ===================================

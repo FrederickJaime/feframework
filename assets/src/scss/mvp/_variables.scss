@@ -62,6 +62,18 @@ $bodycopy-styles: (
   'small': ('font-size': 15px, 'line-height': 1.53, 'letter-spacing': 0),
   'large': ('font-size': 16px, 'line-height': 1.5, 'letter-spacing': 0)
 );
+$bodycopy-styles: (
+  small (
+    p: (font-size: 14px, line-height: 1.57, letter-spacing: 0, font-weight: calculate-font-weight('light'))
+  ),
+  medium (
+    p: (font-size: 15px, line-height: 1.53, letter-spacing: 0, font-weight: calculate-font-weight('light'))
+  ),
+  large (
+    p: (font-size: 16px, line-height: 1.5, letter-spacing: 0, font-weight: calculate-font-weight('light'))
+  )
+
+);
 
 // Breakpoints
 // =================================

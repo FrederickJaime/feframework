@@ -1,0 +1,62 @@
+
+
+// Headers 
+// =================================
+// variables coming from _variables.scss Headers
+// Define the Sassy Map called $icons
+
+
+// adding all headers h1-h6
+//@include font-print($chap1-blocks);
+@include font-print($header-styles);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  display: block;
+  margin-bottom: $header-margin-bottom;
+  margin-top: $header-margin-top;
+
+  b {
+    font-weight: calculate-font-weight('bold');
+  }
+
+}
+
+
+
+
+
+
+// Bodycopy
+// =================================
+// variables coming from _variables.scss
+@include font-print($bodycopy-styles);
+
+p {
+
+  &.small-copy {
+    color: $gray-dark;
+    @include font-size(12px);
+    line-height: 1.66;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.small-copy {
+  color: $gray-dark;
+  @include font-size(12px);
+  line-height: 1.66;
+}
