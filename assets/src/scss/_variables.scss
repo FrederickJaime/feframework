@@ -1,11 +1,12 @@
 
 @import 'https://www.siriusxm.com/app-download/fonts/gotham/gotham-font.css';
-//@import '../fonts/GTAmerica';
+@import '../fonts/GTAmerica';
 
 // Fonts
 // =================================
 $font-standard: 'HCo Gotham', sans-serif;
 $font-condensed: 'HCo Gotham Narrow', sans-serif;
+$font-alt: 'GT America', sans-serif;
 
 $fonts-weight: (
   $font-standard: (
@@ -19,7 +20,13 @@ $fonts-weight: (
     'book': 400,
     'medium': 500,
     'black': 800,
-	 )
+   ),
+  $font-alt: (
+    'light': 300,
+    'medium': 500,
+    'bold': 700,
+    'black': 800
+  )
  );
 
 
