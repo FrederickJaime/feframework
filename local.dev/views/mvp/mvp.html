@@ -22,13 +22,12 @@
       HEADER : BEGIN
     -->
     <header class="header">
+
       <!--
       toolbar : begin
       -->
-      <div class="hide-small topbar" role="toolbar">
-        <div class="content-container topbar-content">
-
-          <div class="row no-padding">
+      <div class="content-container">
+        <div class="row">
             <div class="column align-right align-top small-12 no-padding">
               <div>
                 <button class="topbar-content--button support-btn" href="#" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="support" aria-expanded="false" aria-haspopup="true">
@@ -97,31 +96,176 @@
 
 
             
-          </div>
-          
         </div>
       </div>
       <!--
-      toolbar : begin
+      toolbar : end
       -->
 
       <!--
       navigation : begin
       -->
-      <nav class="content-container navigation horizontal-nav main" role="navigation">
+      <div class="content-container">
 
-        <a class="navigation-logo" href="/" aria-label="SiriusXM Home Button">
-          <img src="./images/sxm-logo.png" alt/>
-        </a>
-        <ul role="menubar">
-          <li><a role="menuitem" href="#">Listen Online</a></li>
-          <li><a role="menuitem" href="#">What's On</a></li>
-          <li><a role="menuitem" href="#">Try SiriusXM</a></li>
-          <li><a role="menuitem" href="#">Subscriptions</a></li>
-          <li><a role="menuitem" href="#">Shop</a></li>
-        </ul>
+        <div class="row">
+          <div class="column small-12 no-padding">
+            <nav class="content-container navigation horizontal-nav main" role="navigation">
+  
+              <a class="navigation-logo" href="/" aria-label="SiriusXM Home Button">
+                <img src="./images/sxm-logo.png" alt/>
+              </a>
+              <ul role="menubar">
+                <li><a role="menuitem" href="https://www.siriusxm.com/player?intcmp=GN_HEADER_NEW_ListenOnline">Listen Online</a></li>
+                <li><button role="menuitem" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="whats-on" aria-expanded="false" aria-haspopup="true">What's On</button></li>
+                <li><button role="menuitem" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="try-siriusxm" aria-expanded="false" aria-haspopup="true">Try SiriusXM</button></li>
+                <li><button role="menuitem" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="subscriptions" aria-expanded="false" aria-haspopup="true">Subscriptions</button></li>
+                <li><button role="menuitem" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="shop" aria-expanded="false" aria-haspopup="true">Shop</button></li>
+              </ul>
+      
+            </nav>
 
-      </nav>
+            <div class="topbar-dropdowns topbar-dropdowns--support dropdown-pane" id="whats-on" aria-hidden="true">
+                <div class="row align-top text-left no-padding">
+                  <div class="column medium-3 align-left">
+                    <h2 class="h3">Radio Not Working?</h2>
+                      <p>Help! I can't hear all of the channels on my radio.</p>
+                      <a href="https://www.siriusxm.com/refresh" class="button">Refresh My Radio</a>
+                  </div>
+                  <div class="column medium-2 align-left">
+                      <h2 class="h3">Quick Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1283873227186&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_WhatisSiriusXM">What is SiriusXM</a></li>
+                        <li><a href="https://www.siriusxm.com/getstarted?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_GettingStarted">Getting Started</a></li>
+                        <li><a href="https://listenercare.siriusxm.com?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_HelpSupportCenter">Help & Support Center</a></li>
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1282009815244&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_ContactUs">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Trial Subscription Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/6598/kw/i%20don't%20know?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_IDontKnowMyLogintoListenOnline">I Don't Know My Login to Listen Online</a></li>
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/3666/kw/When%20is%20my%20trial%20subscription%20ending?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_FindoutWhenMyTrialEnds">Find out When My Trial Ends</a></li>
+                        <li><a href="https://care.siriusxm.com/newradioinformation_initialView.action?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_SubscribetoKeepListeningafterMyTrialEnds">Subscribe to Keep Listening after My Trial Ends</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Add or Transfer Service</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://care.siriusxm.com/login_view.action?task=AddRadio&intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_AddaVehicletoMyAccount">Add a Vehicle to My Account</a></li>
+                        <li><a href="https://www.siriusxm.com/transferservice?intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_TransferaSubscriptiontoaNewVehicle">Transfer a Subscription to a New Vehicle</a></li>
+                      </ul>
+    
+                  </div>
+                </div>
+            </div>
+            <div class="topbar-dropdowns topbar-dropdowns--support dropdown-pane" id="try-siriusxm" aria-hidden="true">
+                <div class="row align-top text-left no-padding">
+                  <div class="column medium-3 align-left">
+                    <h2 class="h3">Radio Not Working?</h2>
+                      <p>Help! I can't hear all of the channels on my radio.</p>
+                      <a href="https://www.siriusxm.com/refresh" class="button">Refresh My Radio</a>
+                  </div>
+                  <div class="column medium-2 align-left">
+                      <h2 class="h3">Quick Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1283873227186&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_WhatisSiriusXM">What is SiriusXM</a></li>
+                        <li><a href="https://www.siriusxm.com/getstarted?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_GettingStarted">Getting Started</a></li>
+                        <li><a href="https://listenercare.siriusxm.com?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_HelpSupportCenter">Help & Support Center</a></li>
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1282009815244&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_ContactUs">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Trial Subscription Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/6598/kw/i%20don't%20know?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_IDontKnowMyLogintoListenOnline">I Don't Know My Login to Listen Online</a></li>
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/3666/kw/When%20is%20my%20trial%20subscription%20ending?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_FindoutWhenMyTrialEnds">Find out When My Trial Ends</a></li>
+                        <li><a href="https://care.siriusxm.com/newradioinformation_initialView.action?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_SubscribetoKeepListeningafterMyTrialEnds">Subscribe to Keep Listening after My Trial Ends</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Add or Transfer Service</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://care.siriusxm.com/login_view.action?task=AddRadio&intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_AddaVehicletoMyAccount">Add a Vehicle to My Account</a></li>
+                        <li><a href="https://www.siriusxm.com/transferservice?intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_TransferaSubscriptiontoaNewVehicle">Transfer a Subscription to a New Vehicle</a></li>
+                      </ul>
+    
+                  </div>
+                </div>
+            </div>
+            <div class="topbar-dropdowns topbar-dropdowns--support dropdown-pane" id="subscriptions" aria-hidden="true">
+                <div class="row align-top text-left no-padding">
+                  <div class="column medium-3 align-left">
+                    <h2 class="h3">Radio Not Working?</h2>
+                      <p>Help! I can't hear all of the channels on my radio.</p>
+                      <a href="https://www.siriusxm.com/refresh" class="button">Refresh My Radio</a>
+                  </div>
+                  <div class="column medium-2 align-left">
+                      <h2 class="h3">Quick Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1283873227186&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_WhatisSiriusXM">What is SiriusXM</a></li>
+                        <li><a href="https://www.siriusxm.com/getstarted?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_GettingStarted">Getting Started</a></li>
+                        <li><a href="https://listenercare.siriusxm.com?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_HelpSupportCenter">Help & Support Center</a></li>
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1282009815244&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_ContactUs">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Trial Subscription Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/6598/kw/i%20don't%20know?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_IDontKnowMyLogintoListenOnline">I Don't Know My Login to Listen Online</a></li>
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/3666/kw/When%20is%20my%20trial%20subscription%20ending?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_FindoutWhenMyTrialEnds">Find out When My Trial Ends</a></li>
+                        <li><a href="https://care.siriusxm.com/newradioinformation_initialView.action?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_SubscribetoKeepListeningafterMyTrialEnds">Subscribe to Keep Listening after My Trial Ends</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Add or Transfer Service</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://care.siriusxm.com/login_view.action?task=AddRadio&intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_AddaVehicletoMyAccount">Add a Vehicle to My Account</a></li>
+                        <li><a href="https://www.siriusxm.com/transferservice?intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_TransferaSubscriptiontoaNewVehicle">Transfer a Subscription to a New Vehicle</a></li>
+                      </ul>
+    
+                  </div>
+                </div>
+            </div>
+            <div class="topbar-dropdowns topbar-dropdowns--support dropdown-pane" id="shop" aria-hidden="true">
+                <div class="row align-top text-left no-padding">
+                  <div class="column medium-3 align-left">
+                    <h2 class="h3">Radio Not Working?</h2>
+                      <p>Help! I can't hear all of the channels on my radio.</p>
+                      <a href="https://www.siriusxm.com/refresh" class="button">Refresh My Radio</a>
+                  </div>
+                  <div class="column medium-2 align-left">
+                      <h2 class="h3">Quick Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1283873227186&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_WhatisSiriusXM">What is SiriusXM</a></li>
+                        <li><a href="https://www.siriusxm.com/getstarted?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_GettingStarted">Getting Started</a></li>
+                        <li><a href="https://listenercare.siriusxm.com?intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_HelpSupportCenter">Help & Support Center</a></li>
+                        <li><a href="https://www.siriusxm.com/servlet/Satellite?c=SXM_PageDetail_C&childpagename=SXM%2FSXM_PageDetail_C%2FOpenContent&cid=1282009815244&pagename=SXM%2FWrapper&intcmp=GN_HEADER_NEW_HelpSupport_QuickHelp_ContactUs">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Trial Subscription Help</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/6598/kw/i%20don't%20know?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_IDontKnowMyLogintoListenOnline">I Don't Know My Login to Listen Online</a></li>
+                        <li><a href="https://listenercare.siriusxm.com/app/answers/detail/a_id/3666/kw/When%20is%20my%20trial%20subscription%20ending?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_FindoutWhenMyTrialEnds">Find out When My Trial Ends</a></li>
+                        <li><a href="https://care.siriusxm.com/newradioinformation_initialView.action?intcmp=GN_HEADER_NEW_HelpSupport_TrialSubscriptionHelp_SubscribetoKeepListeningafterMyTrialEnds">Subscribe to Keep Listening after My Trial Ends</a></li>
+                      </ul>
+                  </div>
+                  <div class="column medium-3 align-left">
+                      <h2 class="h3">Add or Transfer Service</h2>
+                      <ul class="no-bullet">
+                        <li><a href="https://care.siriusxm.com/login_view.action?task=AddRadio&intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_AddaVehicletoMyAccount">Add a Vehicle to My Account</a></li>
+                        <li><a href="https://www.siriusxm.com/transferservice?intcmp=GN_HEADER_NEW_HelpSupport_AddorTransferService_TransferaSubscriptiontoaNewVehicle">Transfer a Subscription to a New Vehicle</a></li>
+                      </ul>
+    
+                  </div>
+                </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
       <!--
       navigation : end
       -->
@@ -129,30 +273,34 @@
       <!--
         header-hero : begin
       -->
-      <div class="row header-hero no-padding"> 
-        <div class="column small-12 no-padding">
+      <div class="header-hero">
+        <div class="content-container">
 
-          <div class="row header-hero--content row-reverse-small">
-            <div class="column small-12 medium-6 header-hero--content-copy align-left">
-              <h1 class="header-hero--content-copy--title h2">
-                <b>
-                  <span class="header-hero--content-copy--eyebrow h5">Stream on.</span>
-                  The best of SiriusXM is even better on Roku devices.
-                </b>
-              </h1>
-              <p>
-                  The SiriusXM experience gives you even more features to enjoy on your Roku device. And streaming is included with your All Access trial or paid subscription. Don’t have a trial or paid subscription? We can get you one.
-              </p>
-              <a href="#" class="button dark">Set Me Up to Stream</a>
-              <div class="header-hero--links">
-                <a href="#" class="text-link dark">Forgot Username or Password</a><a href="#" class="text-link dark">Sign Up for a Trial</a>
-              </div>
-            </div>
-            <div class="column small-12 medium-6 header-hero--content-image">
-              <img src="images/roku-device.png"/>
+          
+            
+        <div class="row header-hero--content row-reverse-small">
+          <div class="column small-12 medium-6 header-hero--content-copy align-left">
+            <h1 class="header-hero--content-copy--title h2">
+              <b>
+                <span class="header-hero--content-copy--eyebrow h5">Stream on.</span>
+                The best of SiriusXM is even better on Roku devices.
+              </b>
+            </h1>
+            <p>
+                The SiriusXM experience gives you even more features to enjoy on your Roku device. And streaming is included with your All Access trial or paid subscription. Don’t have a trial or paid subscription? We can get you one.
+            </p>
+            <a href="#" class="button dark">Set Me Up to Stream</a>
+            <div class="header-hero--links">
+              <a href="#" class="text-link dark">Forgot Username or Password</a><a href="#" class="text-link dark">Sign Up for a Trial</a>
             </div>
           </div>
-
+          <div class="column small-12 medium-6 header-hero--content-image">
+            <img src="images/roku-device.png"/>
+          </div>
+        </div>
+            
+          
+    
         </div>
       </div>
       <!--

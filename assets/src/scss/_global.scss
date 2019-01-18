@@ -13,6 +13,12 @@ body {
   scroll-behavior: smooth;
 }
 
+.content-container {
+  position: relative;
+  display: block;
+  max-width: $layout-max-width;
+  margin: 0 auto;
+}
 
 .navigation-logo {
 

@@ -15,8 +15,18 @@
 
   &-hero--content {
     color: $white;
-    max-width: $layout-max-width;
-    padding: 24px 0 40px;
+
+    padding-top: 24px;
+    padding-bottom: 40px;
+
+    .column {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
 
     &-copy--eyebrow {
       display: block;
@@ -41,7 +51,8 @@
     }
 
     @include bp(medium) {
-      padding: 50px 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
 

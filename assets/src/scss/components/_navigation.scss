@@ -18,9 +18,9 @@
   &.horizontal-nav {
     align-items: center;
     display: flex;
-    padding: 32px 12px;
+    padding: 32px 0px;
     justify-content: space-between;
-
+    width: 100%;
     [role='menubar'] {
       display: flex;
     }
