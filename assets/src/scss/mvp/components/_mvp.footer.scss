@@ -12,15 +12,22 @@
 
       li {
         margin: 15px 0;
-        em {
-          color: rgb(177, 149, 80);
-        }
-        a {
-          color: $black;
-          font-weight: calculate-font-weight('regular');
+      }
+
+      li em {
+        color: $gold;
+      }
+
+      li a {
+        color: $black;
+        font-weight: calculate-font-weight('regular');
+
+        &:hover {
+          color: $blue-medium;
         }
       }
     }
+
   }
 
 }
