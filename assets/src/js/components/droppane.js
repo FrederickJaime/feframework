@@ -7,7 +7,8 @@ function droppane() {
   if (dropdowns.length !== 0) {
     let dropdownShow = function (el, panel) {
       if (el.getAttribute('aria-expanded') === 'false') {
-        panel.style.top = `${el.getBoundingClientRect().bottom}px`;
+        panel.style.top = `${el.getBoundingClientRect().top + el.getBoundingClientRect().height}px`;
+        console.log(`${el.getBoundingClientRect().height}px`);
         el.setAttribute('aria-expanded', 'true');
         panel.setAttribute('aria-hidden', 'false');
       }

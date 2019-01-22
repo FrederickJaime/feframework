@@ -12,20 +12,35 @@
 
   &-content--button {
     display: inline-block;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
   }
 
   &-dropdowns {
     padding: 35px 20px;
+    background-color: #f9f9f9;
+    transform: translateX(22px);
 
     a:not(.button) {
       @include font-size(12px);
     }
 
+    width: calc(100% + 22px);
+
     &--account {
       width: 50%;
     }
+
   }
 
+}
+
+.main-nav {
+  position: relative;
+  width: 100%;
+  box-shadow: 0px 0px 1px 1px #eeeeee; 
 }
 
 main {

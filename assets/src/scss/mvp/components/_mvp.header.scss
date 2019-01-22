@@ -20,11 +20,17 @@
     padding-bottom: 40px;
 
     .column {
+
       &:first-child {
-        padding-left: 0;
+        @include bp(medium) {
+          padding-left: 0;
+        }
       }
+
       &:last-child {
-        padding-right: 0;
+        @include bp(medium) {
+          padding-right: 0;
+        }
       }
     }
 

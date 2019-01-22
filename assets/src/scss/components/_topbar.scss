@@ -1,7 +1,11 @@
 
 
 .topbar {
+  position: absolute;
+  width: 100%;
   background-color: $gray-light;
+  margin: 0;
+  z-index: 2;
 
   &-content {
     padding: 0 12px;
@@ -12,7 +16,8 @@
     @include font-size(13px);
     font-weight: map-deep-get($fonts-weight, $font-standard, regular);
     line-height: 1.55;
-    padding: 5px 0 5px 49px;
+    padding: 5px 22px 5px 49px;
+    transform: translateX(22px);
     text-decoration: none;
     background-repeat: no-repeat;
     background-size: 17px 17px;

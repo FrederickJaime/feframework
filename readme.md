@@ -6,7 +6,7 @@ A lightweight front-end framework for creating scalable, responsive websites
 
 ## Installation :
 before installing please make sure to please install/update graceful-fs:
-`npm install -g graceful-fs graceful-fs@latest`
+`npm install -g graceful-fs@latest`
 
 you will also need to update minimatch:
 `npm update minimatch`
