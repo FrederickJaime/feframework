@@ -1,38 +1,10 @@
 
 .footer {
 
-  .navigation {
-    padding: 24px 0 16px;
-    width: 100%;
+  &-group-link {
 
-    @include bp(medium) {
-      padding: 24px 0;
-    }
-  }
-
-  [role='menubar'] {
-
-    justify-content: space-between;
-    width: 100%;
-
-    li {
-      &:first-of-type [role='menuitem'] {
-        padding-left: 0;
-      }
-
-    }
+    position: relative;
 
   }
 
-  [role='menuitem'] {
-    font-weight: map-deep-get($fonts-weight, $font-standard, light);
-  }
-
-  &-copyright {
-    margin: 0 0 24px;
-
-    @include bp(medium) {
-      margin: inherit;
-    }
-  }
 }

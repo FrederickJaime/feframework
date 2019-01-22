@@ -180,7 +180,7 @@
         @if $index == false {
 
           &-#{$item-name} {
-            #{$prop}: calc(#{$item} + (12px+(#{index($map, $item-name $item)}*0px)));
+            #{$prop}: calc(#{$item} + (12px+(#{index($map, $item-name $item)}*0)));
           }
 
         } @else {
@@ -229,7 +229,7 @@
 
       }
 
-      
+
 
     }
 
