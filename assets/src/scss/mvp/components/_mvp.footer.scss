@@ -1,10 +1,26 @@
 
 .footer {
+  padding-top: 55px;
 
   &-group-link {
 
+    margin-bottom: 50px;
     position: relative;
 
+    ul {
+      @include font-size(12px);
+
+      li {
+        margin: 15px 0;
+        em {
+          color: rgb(177, 149, 80);
+        }
+        a {
+          color: $black;
+          font-weight: calculate-font-weight('regular');
+        }
+      }
+    }
   }
 
 }
