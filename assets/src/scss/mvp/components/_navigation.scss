@@ -56,10 +56,41 @@
         display: none;
 
         li {
+          
+          @include bp(medium) {
+            padding: 27px 12px 0 12px;
+          }
+
+          @include bp(large) {
+            padding: 27px 32px 0 32px;
+          }
+
+          &:last-of-type {
+            padding-right: 0;
+          }
+
           [role='menuitem'] {
-            display: block;
-            padding-top: 32px;
-            padding-bottom: 32px;
+            position: relative;
+            padding: 0 0 27px;
+
+            &::after {
+              background: $blue-light;
+              bottom: 23px;
+              content: '';
+              display: none;
+              height: 3px;
+              left: 0;
+              position: absolute;
+              width: 100%;
+            }
+
+            &:hover {
+
+              &::after {
+                display: block;
+              }
+
+            }
           }
         }
       }
