@@ -1,13 +1,12 @@
 
-@import '../../../assets/src/scss/variables';
-@import '../../../assets/src/scss/color-palette';
 @import '../../../assets/src/scss/mixins';
+@import '../../../assets/src/scss/mvp/variables';
+@import '../../../assets/src/scss/mvp/color-palette';
 
-.navigation-logo img {
-  width: auto;
-  max-width: 220px;
-}
 
+
+// TOP BAR
+// ==============
 .topbar {
 
   &-content--button {
@@ -37,6 +36,15 @@
 
 }
 
+// NAV
+// ==============
+.navigation-logo img {
+  width: auto;
+  max-width: 220px;
+}
+
+// MAIN
+// ==============
 .main-nav {
   position: relative;
   width: 100%;
@@ -54,4 +62,206 @@ main {
   &-disclaimer {
     margin: 40px 0 8px;
   }
+}
+
+// FOOTER
+// ==============
+
+.footer {
+  padding-top: 55px;
+
+  &-group-link {
+
+    margin-bottom: 50px;
+    position: relative;
+
+    ul {
+      @include font-size(12px);
+
+      li {
+        margin: 15px 0;
+      }
+
+      li em {
+        color: $gold;
+      }
+
+      li a {
+        color: $black;
+        font-weight: calculate-font-weight('regular');
+
+        &:hover {
+          color: $blue-medium;
+        }
+      }
+    }
+
+  }
+
+  // Footer placeholders
+  // ======================
+  // Begin
+
+  %group-button--default {
+    background-image: url('../images/footerx2.png');
+    background-size: 405px 119px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-indent: -1000px;
+  }
+  
+
+  %group-button-ul--default {
+    font-size: 0;
+    margin-bottom: 40px;
+
+    li {
+      display: inline-block;
+      padding-right: 12px;
+    }
+  }
+
+  %group-button-header-small {
+    color: $gray-medium;
+    @include font-size(14px);
+    font-weight: calculate-font-weight('regular');
+    margin-bottom: 10px;
+  }
+
+  // ======================
+  // End
+
+  &-group-social {
+
+    &--header {
+      @extend %group-button-header-small;
+    }
+
+    &--button {
+      @extend %group-button--default;
+      height: 36px;
+      width: 36px;
+    }
+
+    &--twitter {
+      background-position: -36px 0;
+    }
+
+    &--linkedin {
+      background-position: -72px 0;
+    }
+
+    &--instagram {
+      background-position: -108px 0;
+    }
+
+    &--youtube {
+      background-position: -144px 0;
+    }
+
+    ul {
+      @extend %group-button-ul--default;
+
+      li {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &-group-contact {
+
+    &--header {
+      @extend %group-button-header-small;
+    }
+
+    &--button {
+      @extend %group-button--default;
+      height: 37px;
+      margin: 0 6px 6px;
+      width: 37px;
+    }
+
+    &--chat {
+      background-position: 0 -36px;
+    }
+
+    &--phone {
+      background-position: -37px -36px;
+    }
+
+    &--email {
+      background-position: -74px -36px;
+    }
+
+    &--support {
+      background-position: -111px -36px;
+    }
+
+    ul {
+      @extend %group-button-ul--default;
+
+      li {
+        color: $gray-medium;
+        @include font-size(12px);
+        font-weight: calculate-font-weight('book');
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &-group-listen {
+
+    &--header {
+      @extend %group-button-header-small;
+    }
+
+    &--button {
+      @extend %group-button--default;
+      height: 40px;
+      width: 135px;
+    }
+
+    &--apple {
+      background-position: 0 -76px;
+    }
+
+    &--google {
+      background-position: -135px -76px;
+    }
+
+    &--amazon {
+      background-position: -270px -73px;
+      height: 46px;
+    }
+
+    ul {
+
+      li {
+        margin-bottom: 10px;
+      }
+
+    }
+
+  }
+
+  &-copyright {
+    margin-bottom: 72px;
+
+    a {
+      color: $gray-medium;
+      font-weight: calculate-font-weight('regular');
+
+      &:hover {
+        color: $blue-medium;
+      }
+    }
+
+    p {
+      padding: 25px 4% 20px;
+    }
+
+
+  }
+
 }
