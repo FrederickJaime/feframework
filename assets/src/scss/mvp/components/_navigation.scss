@@ -56,13 +56,30 @@
         display: none;
 
         li {
-          
+
+          &.navigation-primary-search {
+            cursor: pointer;
+            background-image: url('../images/ico_search.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            width: 25px;
+
+            button {
+              text-indent: -9000px;
+            }
+
+            &:hover {
+              background-image: url('../images/ico_search-hover.png');
+            }
+          }
+
           @include bp(medium) {
-            padding: 27px 12px 0 12px;
+            padding: 27px 12px 0;
           }
 
           @include bp(large) {
-            padding: 27px 32px 0 32px;
+            padding: 27px 27px 0;
           }
 
           &:last-of-type {
@@ -72,6 +89,10 @@
           [role='menuitem'] {
             position: relative;
             padding: 0 0 27px;
+
+            &.navigation-search {
+              text-indent: -1000px;
+            }
 
             &::after {
               background: $blue-light;

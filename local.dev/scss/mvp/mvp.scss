@@ -12,7 +12,7 @@
   &-content--button {
     display: inline-block;
 
-    &:hover {
+    &[aria-expanded='true'] {
       background-color: #f9f9f9;
     }
   }
@@ -21,6 +21,10 @@
     padding: 35px 20px;
     background-color: #f9f9f9;
     transform: translateX(22px);
+
+    h2 {
+      color: $gray-medium;
+    }
 
     a:not(.button) {
       @include font-size(12px);
@@ -43,13 +47,19 @@
   max-width: 220px;
 }
 
-// MAIN
-// ==============
+.navigation-dropdowns {
+  background: $gray-light;
+  border-top: 2px solid rgba(0,0,0,.025);
+}
+
 .main-nav {
   position: relative;
   width: 100%;
-  box-shadow: 0px 0px 1px 1px #eeeeee; 
 }
+
+// MAIN
+// ==============
+
 
 main {
   background: $white;
