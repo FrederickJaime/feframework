@@ -49,6 +49,13 @@
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+        width: 22%;
+        max-width: 220px;
+
+        img {
+          width: 100%;
+        }
+
       }
 
 
@@ -62,11 +69,27 @@
             background-image: url('../images/ico_search.png');
             background-repeat: no-repeat;
             background-position: center center;
-
             width: 25px;
 
             button {
               text-indent: -9000px;
+            }
+
+            input {
+              display: none;
+              border: none;
+              border-bottom: 1px solid #ccc;
+              right: 30px;
+              @include font-size(24px);
+              font-weight: calculate-font-weight('thin');
+              height: 45px;
+              padding: 1px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              visibility: hidden;
+              width: 100%;
+              
             }
 
             &:hover {
