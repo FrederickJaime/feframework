@@ -129,7 +129,9 @@
                     <li><button role="menuitem" data-dropdown data-pane-hover="true" data-pane-position="bottom, left" data-toggle="shop" aria-expanded="false" aria-haspopup="true">Shop</button></li>
                     <li class="navigation-primary-search" role="search">
                       <button role="menuitem" aria-expanded="false" aria-haspopup="true">Search</button>
-                      <input type="search" autocomplete="off" aria-hidden="true" placeholder="Search for channels, shows, hosts or help">
+                      <form action="https://www.siriusxm.com/search" aria-hidden="true" aria-label="Search Form" method="get">
+                        <input type="search" name="q" autocomplete="off" placeholder="Search for channels, shows, hosts or help">
+                      </form>
                     </li>
                   </ul>
                   <div class="navigation-dropdowns navigation-dropdowns--whats-on dropdown-pane" id="whats-on" aria-hidden="true">

@@ -69,25 +69,45 @@
             background-image: url('../images/ico_search.png');
             background-repeat: no-repeat;
             background-position: center center;
+            padding-right: 0;
+            padding-left: 0;
             width: 25px;
 
-            button {
+            [role='menuitem'] {
+              height: 25px;
               text-indent: -9000px;
+              position: relative;
+              width: 100%;
+            }
+
+            [role='menuitem']:hover {
+
+              &::after {
+                display: none;
+              }
+              
+            }
+
+            form {
+              position: absolute;
+              height: 45px;
+              right: 30px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 100%;
             }
 
             input {
-              display: none;
+              //display: none;
               border: none;
               border-bottom: 1px solid #ccc;
-              right: 30px;
+              
               @include font-size(24px);
               font-weight: calculate-font-weight('thin');
               height: 45px;
               padding: 1px;
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              visibility: hidden;
+              position: relative;
+              //visibility: hidden;
               width: 100%;
               
             }
